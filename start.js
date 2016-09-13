@@ -12,7 +12,8 @@ var params = {
         ["/css", "./css"],
         ["/lib","./lib"],
         ["/plugin","./plugin"],
-        ["/js","./js"]],
+        ["/js","./js"],
+        ["/pic","./pic"]],
     logLevel: 2 // 0 = errors only, 1 = some, 2 = lots 
 };
 liveServer.start(params);

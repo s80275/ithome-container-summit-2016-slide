@@ -27,32 +27,83 @@
                 <h1>
                     <del>Docker 從入門到入魔&#x1f608;</del>
                 </h1>
+                <p>之魔鬼藏在細節裡</p>
             </section>
             <section>
-                <h1>這裡會講到:</h1>
-                <h2>
-                    <ul>
-                        <li>Docker</li>
-                        <li>Docker Compose</li>
-                    </ul>
-                </h2>
+                <section>
+                    <h1>這裡會講到:</h1>
+                    <h2>
+                        <ul>
+                            <li>Docker</li>
+                            <li>Docker Compose</li>
+                        </ul>
+                    </h2>
+                </section>
+                <section>
+                    <h1>不會講到:</h1>
+                    <h3>
+                        <ul>
+                            <li><a href="http://kubernetes.io/">Kubernates</a></li>
+                            <li><a href="http://mesos.apache.org/">Mesos</a></li>
+                        </ul>
+                    </h3>
+                    <p>以及其他很複雜高大上但除範例之外<br/>不知道怎麼跑起來的方案&#x1f60f;</p>
+                </section>
             </section>
             <section>
-                <h1>不會講到:</h1>
-                <h3>
-                    <ul>
-                        <li>Kubernates</li>
-                        <li>Mesos</li>
-                    </ul>
-                    <br/>&其他看起來很高級但除了範例之外不知道怎麼跑的方案&#x1f618;
-                </h3>
+                <section>
+                    <p>大家都說<b style="font-size:200%">容器化</b>是未來趨勢...</p>
+                </section>
+                <section>
+                    <p>但我們只有一堆Copy & Paste的Server端<b style="font-size:200%">舊程式</b>...</p>
+                </section>
+                <section>
+                    <p>要用怎樣的方法來最小幅度<b style="font-size:200%">改造</b>舊程式， 以便能夠用
+                        <b><a href="https://github.com/docker/docker">Docker</a></b> + <b><a href="https://github.com/docker/compose">Docker Compose</a></b>的組合，
+                        配合內部架設
+                        <b><a href="https://github.com/docker/distribution">Docker影像庫</a></b>來做開發時期的維護及營運時期的運行。</p>
+                </section>
             </section>
             <section>
-                <p>大家都說<b style="font-size:200%">容器化</b>是未來趨勢...</p>
+                <section>
+                    <p>首先來說為何要<b style="font-size:150%">容器化</b>...</p>
+                </section>
+                <section>
+                    <img src="./pic/game_DAU.jpg" />
+                    <small class="caption">
+                        來源：<a href="http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html">http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html</a>
+                    </small>
+                    <p class="fragment fade-up" style="font-size:120%">從正式上線營運開始後的三個星期到一個月之間是關鍵<span style="font-size:120%">&#x1f4b0;</span>觀察期</p>
+                </section>
+                <section>
+                    <h2>
+                        流量特性：
+                    </h2>
+                    <h3>
+                        <ul>
+                            <ol class="fragment fade-up">一開始會有暴衝流量(衝首發)</ol>
+                            <ol class="fragment fade-up">如果紅了還會繼續暴衝(病毒效應)</ol>
+                            <ol class="fragment fade-up">如果不紅就會掉得很快(該撤收了)</ol>
+                            <ol class="fragment fade-up"><small>真的不紅就該減少維護人力(自動更新)</small></ol>
+                        </ul>
+                    </h3>
+                    <h3 class="fragment fade-up">如何根據實際情況有效配置硬體資源讓營運成本降低？</h3>
+                </section>
+                <section>
+                    <h1>
+                        讓伺服器配置有彈性
+                    </h1>
+                    <h3>
+                        <ul>
+                            <ol class="fragment fade-up">安裝佈署的方法要很容易&自動化</ol>
+                            <ol class="fragment fade-up">遷移到更↑或↓配置的硬體流程簡易&快</ol>
+                            <ol class="fragment fade-up"><br/><del style="font-weight: lighter">最好還不用多花錢&#x1f4b8;<del></ol>
+                        </ul>
+                    </h3>
+                </section>
+                
             </section>
-            <section>
-                <p>但我們這裡只有一堆Copy & Paste的<b style="font-size:200%">舊程式</b>...</p>
-            </section>
+
         </div>
     </div>
     <script src="lib/js/head.min.js"></script>
