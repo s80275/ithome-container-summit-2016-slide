@@ -1,0 +1,23 @@
+{
+  "name": "container-summit-2016-slide",
+  "version": "1.0.0",
+  "description": "Container Summit 2016 slide",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/windperson/container-summit-2016-slide.git"
+  },
+  "keywords": [
+    "slide",
+    "reveal.js"
+  ],
+  "author": "Chen-Yu Pao",
+  "license": "MIT",
+  "homepage": "https://gitlab.com/windperson/container-summit-2016-slide#README",
+  "devDependencies": {
+    "live-server": "^1.1.0"
+  }
+}
