@@ -107,14 +107,34 @@
                     </h2>
                     <h3>
                         <ul>
-                            <ol class="fragment fade-up">遊戲系統中佔很大部分的設定檔</ol>
-                            <ol class="fragment fade-up">商業邏輯的核心資料</ol>
-                            <ol class="fragment fade-up">遊戲的bug有至少超過一半是這類資料沒設定正確</ol>
-                            <ol class="fragment fade-up">需要有辦法能在發現錯誤之後回溯上個版本</ol>
+                            <ol class="fragment fade-up" data-fragment-index="1">遊戲系統中佔很大部分的設定檔</ol>
+                            <ol class="fragment fade-up" data-fragment-index="2">遊戲商業邏輯的核心資料</ol>
+                            <ol class="fragment fade-up" data-fragment-index="3">至少一半bug是這類資料沒設定正確</ol>
+                            <ol class="fragment fade-up" data-fragment-index="4">需要有辦法能在發現錯誤之後快速回溯上個版本
+                                <span class="fragment fade-up" data-fragment-index="5">(退版)</span></ol>
                         </ul>
                     </h3>
                 </section>
-                
+                <section>
+                    <h1>使用Docker做容器化</h1>
+                    <ul>
+                        <ol class="fragment fade-up" data-fragment-index="1">伺服器的部署方法完全一致統一化</ol>
+                        <ol class="fragment fade-up" data-fragment-index="2">多個服務要(縮減規模)同時部署在單台硬體上較簡單
+                            <div class="fragment fade-up" data-fragment-index="3">(port mapping且容器內的程式不需改設定)</div></ol>
+                        <ol class="fragment fade-up" data-fragment-index="4">萬一要退版，藉由Docker的<a href="https://docs.docker.com/v1.5/terms/layer/#union-file-system">Union File System</a>特性可快速退回先前的狀態來回溯服務狀態</ol>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>Docker是什麼</h1>
+                    <ul>
+                        <ol class="fragment fade-up" data-fragment-index="1">Light Weight VM?</ol>
+                        <ol class="fragment fade-up" data-fragment-index="2">Runtime?</ol>
+                        <ol class="fragment fade-up" data-fragment-index="3">Sandbox?</ol>
+                        <ol class="fragment fade-up" data-fragment-index="4">Transport Package Format?</ol>
+                    </ul>
+                </section>
             </section>
 
         </div>
