@@ -73,7 +73,7 @@
                     <small class="caption">
                         來源：<a href="http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html">http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html</a>
                     </small>
-                    <p class="fragment fade-up" style="font-size:120%">從正式上線營運開始後三星期到一個月之間是關鍵<span style="font-size:120%">&#x1f4b0;</span>觀察期</p>
+                    <p class="fragment fade-up" style="font-size:120%">從正式上線營運開始後三星期到一個月之間是<br/>關鍵<span style="font-size:120%">&#x1f4b0;</span>觀察期</p>
                 </section>
                 <section>
                     <h2>
@@ -85,7 +85,7 @@
                             <li class="fragment fade-up" data-fragment-index="2">如果紅了還會繼續暴衝(病毒式傳播)</li>
                             <li class="fragment fade-up" data-fragment-index="3">如果不紅就會掉得很快(該撤收了)</li>
                             <li class="fragment fade-up" data-fragment-index="4">
-                                    真的不紅主動減少維護人力硬體等的開銷<br/><small class="fragment fade-up" data-fragment-index="5">(自動營運)</small>
+                                真的不紅主動減少維護人力硬體等的開銷<br/><small class="fragment fade-up" data-fragment-index="5">(自動營運)</small>
                             </li>
                         </ul>
                     </h3>
@@ -150,11 +150,52 @@
                 </section>
                 <section>
                     <h2>Docker<br/>(docker-engine)<br/>是什麼</h2>
-                    <h3 class="fragment fade-up" data-fragment-index="1">不管它是什麼，要做的是：</h3>
+                    <h3 class="fragment fade-up" data-fragment-index="1">不管它是什麼，要做的就是：</h3>
                     <ol>
-                        <li class="fragment fade-up" data-fragment-index="2">將應用程式執行環境進行包裝產生『image』</li>
-                        <li class="fragment fade-up" data-fragment-index="3">產生的『image』可導入在docker-engine上執行該應用</li>
+                        <li class="fragment fade-up" data-fragment-index="2">將應用程式執行環境進行<b>包裝</b>產生可佈署的『image』</li>
+                        <li class="fragment fade-up" data-fragment-index="3">『image』藉由一些步驟儲存、導入到目標端機器的docker上</li>
+                        <li class="fragment fade-up" data-fragment-index="4">『image』在目標端的docker上拆包、啟動，執行該應用</li>
                     </ol>
+                </section>
+                <section>
+                    <h3>幾個概念</h3>
+                    <div style="display: table; width:100%; overflow:hidden;">
+                        <div style="display: table-cell; vertical-align: middle;">
+                            <img style="display: block; margin: 0px;" data-src="./pic/engine-components-flow.png" /><br/>
+                            <small>來源：<a href="https://docs.docker.com/engine/understanding-docker/#/what-is-docker-engine">官網docker-engine</a></small>
+                        </div>
+                        <div style="display: table-cell; margin-left: 20px; vertical-align: middle; float:right">
+                            <ol>
+                                <li class="fragment fade-up" data-fragment-index="1">client-server架構</li>
+                                <li class="fragment fade-up" data-fragment-index="2">Running Container<small>(run time)</small><br/>
+                                    <span class="fragment fade-up" data-fragment-index="3"><small>v.s.</small>
+                                        <span/><br/>
+                                        <span class="fragment fade-up" data-fragment-index="4">Fixed Image
+                                        <small>(build time)</small></span></li>
+                                <li class="fragment fade-up" data-fragment-index="5">Union File System分層構造<br/>
+                                    <span class="fragment fade-up" data-fragment-index="6">
+                                        <small>(for static data & code or exe)</small></span></li>
+                                <li class="fragment fade-up" data-fragment-index="7"><a href="https://docs.docker.com/engine/tutorials/dockervolumes/">Volume</a> for state data<br/>
+                                    <ul style="font-size: 80%">
+                                        <li class="fragment fade-up" data-fragment-index="8">多個容器可以共享單一volume</li>
+                                        <li class="fragment fade-up" data-fragment-index="9">容器的volume可以對應到實體機器FS位置</li>
+                                        <li class="fragment fade-up" data-fragment-index="10">image產生時可以定義內部路徑位置的volme，並由另一個容器啟動時使用
+                                            <br/>(<a href="https://docs.docker.com/engine/reference/run/#/volume-shared-filesystems">--volumes-from=""</a>)</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Docker Compose<br/>是什麼</h2>
+                    <ul>
+                        <li class="fragment fade-up" data-fragment-index="1">
+                            docker的client端操作單用指令列打命令落落長
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="2">運作環境的配置通常不會只有單一個容器</li>
+                        <li class="fragment fade-up" data-fragment-index="3">動態的環境變數&設定檔對應</li>
+                    </ul>
                 </section>
             </section>
 
