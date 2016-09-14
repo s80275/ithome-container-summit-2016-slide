@@ -73,7 +73,7 @@
                     <small class="caption">
                         來源：<a href="http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html">http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html</a>
                     </small>
-                    <p class="fragment fade-up" style="font-size:120%">從正式上線營運開始後的三個星期到一個月之間是關鍵<span style="font-size:120%">&#x1f4b0;</span>觀察期</p>
+                    <p class="fragment fade-up" style="font-size:120%">從正式上線營運開始後三星期到一個月之間是關鍵<span style="font-size:120%">&#x1f4b0;</span>觀察期</p>
                 </section>
                 <section>
                     <h2>
@@ -81,13 +81,15 @@
                     </h2>
                     <h3>
                         <ul>
-                            <ol class="fragment fade-up">一開始會有暴衝流量(衝首發)</ol>
-                            <ol class="fragment fade-up">如果紅了還會繼續暴衝(病毒式傳播)</ol>
-                            <ol class="fragment fade-up">如果不紅就會掉得很快(該撤收了)</ol>
-                            <ol class="fragment fade-up"><small>真的不紅就該減少維護人力(自動更新)</small></ol>
+                            <li class="fragment fade-up" data-fragment-index="1">一開始會有暴衝流量(衝首發)</li>
+                            <li class="fragment fade-up" data-fragment-index="2">如果紅了還會繼續暴衝(病毒式傳播)</li>
+                            <li class="fragment fade-up" data-fragment-index="3">如果不紅就會掉得很快(該撤收了)</li>
+                            <li class="fragment fade-up" data-fragment-index="4">
+                                    真的不紅主動減少維護人力硬體等的開銷<br/><small class="fragment fade-up" data-fragment-index="5">(自動營運)</small>
+                            </li>
                         </ul>
                     </h3>
-                    <h3 class="fragment fade-up">如何根據實際情況有效配置硬體資源讓營運成本降低？</h3>
+                    <h3 class="fragment fade-up" data-fragment-index="6">如何根據實際情況有效配置硬體資源讓營運成本降低？</h3>
                 </section>
                 <section>
                     <h1>
@@ -95,9 +97,12 @@
                     </h1>
                     <h3>
                         <ul>
-                            <ol class="fragment fade-up">安裝佈署的方法要很容易&自動化</ol>
-                            <ol class="fragment fade-up">遷移到更↑或↓配置的硬體流程簡易&快</ol>
-                            <ol class="fragment fade-up"><br/><del style="font-weight: lighter">最好還不用多花錢&#x1f4b8;<del></ol>
+                            <li class="fragment fade-up">安裝佈署的方法要很容易&自動化</li>
+                            <li class="fragment fade-up">遷移到更↑或↓配置的硬體流程簡易&快</li>
+                            <li class="fragment fade-up"><br/>
+                                <del style="font-weight: lighter">最好還不用多花錢&#x1f4b8;
+                                    <del>
+                            </li>
                         </ul>
                     </h3>
                 </section>
@@ -107,33 +112,49 @@
                     </h2>
                     <h3>
                         <ul>
-                            <ol class="fragment fade-up" data-fragment-index="1">遊戲系統中佔很大部分的設定檔</ol>
-                            <ol class="fragment fade-up" data-fragment-index="2">遊戲商業邏輯的核心資料</ol>
-                            <ol class="fragment fade-up" data-fragment-index="3">至少一半bug是這類資料沒設定正確</ol>
-                            <ol class="fragment fade-up" data-fragment-index="4">需要有辦法能在發現錯誤之後快速回溯上個版本
-                                <span class="fragment fade-up" data-fragment-index="5">(退版)</span></ol>
+                            <li class="fragment fade-up" data-fragment-index="1">遊戲系統中佔很大部分的設定檔</li>
+                            <li class="fragment fade-up" data-fragment-index="2">遊戲商業邏輯的核心資料</li>
+                            <li class="fragment fade-up" data-fragment-index="3">至少一半bug是這類資料沒設定正確導致</li>
+                            <li class="fragment fade-up" data-fragment-index="4">要有辦法能在發現錯誤之後快速回溯上個版本重新佈署
+                                <small class="fragment fade-up" data-fragment-index="5">(退版)</small></li>
                         </ul>
                     </h3>
                 </section>
                 <section>
                     <h1>使用Docker做容器化</h1>
                     <ul>
-                        <ol class="fragment fade-up" data-fragment-index="1">伺服器的部署方法完全一致統一化</ol>
-                        <ol class="fragment fade-up" data-fragment-index="2">多個服務要(縮減規模)同時部署在單台硬體上較簡單
-                            <div class="fragment fade-up" data-fragment-index="3">(port mapping且容器內的程式不需改設定)</div></ol>
-                        <ol class="fragment fade-up" data-fragment-index="4">萬一要退版，藉由Docker的<a href="https://docs.docker.com/v1.5/terms/layer/#union-file-system">Union File System</a>特性可快速退回先前的狀態來回溯服務狀態</ol>
+                        <li class="fragment fade-up" data-fragment-index="1">伺服器的部署方法完全一致統一化</li>
+                        <li class="fragment fade-up" data-fragment-index="2">多個服務要(縮減規模)同時部署在單台硬體上較簡單
+                            <div class="fragment fade-up" data-fragment-index="3">(port mapping且容器內的程式不需改設定)</div>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="4">萬一要退版，藉由Docker的
+                            <a href="https://docs.docker.com/v1.5/terms/layer/#union-file-system">Union File System</a> 特性可快速退回先前的狀態來回溯服務狀態
+                        </li>
                     </ul>
                 </section>
             </section>
             <section>
                 <section>
-                    <h1>Docker是什麼</h1>
+                    <h2>Docker<br/>(docker-engine)<br/>是什麼</h2>
                     <ul>
-                        <ol class="fragment fade-up" data-fragment-index="1">Light Weight VM?</ol>
-                        <ol class="fragment fade-up" data-fragment-index="2">Runtime?</ol>
-                        <ol class="fragment fade-up" data-fragment-index="3">Sandbox?</ol>
-                        <ol class="fragment fade-up" data-fragment-index="4">Transport Package Format?</ol>
+                        <li class="fragment fade-up" data-fragment-index="1">Light Weight VM?
+                            <div style="font-size:80%" class="fragment fade-up" data-fragment-index="2">
+                                <a href="https://blog.docker.com/2016/03/containers-are-not-vms/">Containers are not VMs</a></div>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="3">Runtime?</li>
+                        <li class="fragment fade-up" data-fragment-index="4">Sandbox?</li>
+                        <li class="fragment fade-up" data-fragment-index="5">Transport Package Format?</li>
                     </ul>
+                    <img class="fragment fade-up" data-fragment-index="6" style="display: block; margin: auto; position: absolute; top: 0px;"
+                        width="100%" data-src="./pic/ElephantBlindmen.png" />
+                </section>
+                <section>
+                    <h2>Docker<br/>(docker-engine)<br/>是什麼</h2>
+                    <h3 class="fragment fade-up" data-fragment-index="1">不管它是什麼，要做的是：</h3>
+                    <ol>
+                        <li class="fragment fade-up" data-fragment-index="2">將應用程式執行環境進行包裝產生『image』</li>
+                        <li class="fragment fade-up" data-fragment-index="3">產生的『image』可導入在docker-engine上執行該應用</li>
+                    </ol>
                 </section>
             </section>
 
