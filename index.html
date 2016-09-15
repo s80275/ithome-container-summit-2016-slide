@@ -138,12 +138,23 @@
                 <section>
                     <h1>使用Docker做容器化</h1>
                     <ul>
-                        <li class="fragment fade-up" data-fragment-index="1">伺服器的部署方法完全一致統一化</li>
-                        <li class="fragment fade-up" data-fragment-index="2">多個服務要(縮減規模)同時部署在單台硬體上較簡單
-                            <div class="fragment fade-up" data-fragment-index="3">(port mapping且容器內的程式不需改設定)</div>
+                        <li>Ops:
+                            <ul>
+                                <li class="fragment fade-up" data-fragment-index="1">伺服器的部署方法完全一致統一化</li>
+                                <li class="fragment fade-up" data-fragment-index="2">多個服務要(縮減規模)同時部署在單台硬體上較簡單
+                                    <div class="fragment fade-up" data-fragment-index="3">(port mapping且容器內的程式不需改設定)</div>
+                                </li>
+                                <li class="fragment fade-up" data-fragment-index="4">萬一要退版，藉由Docker的
+                                    <a href="https://docs.docker.com/v1.5/terms/layer/#union-file-system">Union File System</a>                                    特性可快速退回先前的狀態來回溯服務狀態
+                                </li>
+                            </ul>
                         </li>
-                        <li class="fragment fade-up" data-fragment-index="4">萬一要退版，藉由Docker的
-                            <a href="https://docs.docker.com/v1.5/terms/layer/#union-file-system">Union File System</a> 特性可快速退回先前的狀態來回溯服務狀態
+                        <li>Dev:
+                            <ul>
+                                <li class="fragment fade-up" data-fragment-index="5"><span style="white-space: nowrap;">開發環境≒營運環境</span>，而且不用花時間自己安裝</li>
+                                
+                                <li class="fragment fade-up" data-fragment-index="6">不怕過了很久以後要修改程式碼找不到舊版本函式庫&套件工具</li>
+                            </ul>
                         </li>
                     </ul>
                 </section>
