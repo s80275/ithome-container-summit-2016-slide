@@ -84,9 +84,15 @@
                     </h2>
                     <h3>
                         <ul style="margin: 0px">
-                            <li class="fragment fade-up" data-fragment-index="1">一開始會有暴衝流量(衝首發)</li>
-                            <li class="fragment fade-up" data-fragment-index="2">如果紅了還會繼續暴衝(病毒式傳播)</li>
-                            <li class="fragment fade-up" data-fragment-index="3">如果不紅就會掉得很快(該撤收了)</li>
+                            <li class="fragment fade-up" data-fragment-index="1">
+                                <div style="white-space: nowrap;">一開始會有暴衝流量(衝首發)</div>
+                            </li>
+                            <li class="fragment fade-up" data-fragment-index="2">
+                                <div style="white-space: nowrap;">如果紅了還會繼續暴衝(病毒式傳播)</div>
+                            </li>
+                            <li class="fragment fade-up" data-fragment-index="3">
+                                <div style="white-space: nowrap;">如果不紅就會掉得很快(該撤收了)</div>
+                            </li>
                             <li class="fragment fade-up" data-fragment-index="4">
                                 <div style="white-space: nowrap;">真的不紅主動減少維護人力硬體等開銷</div><small class="fragment fade-up" data-fragment-index="5">(自動營運)</small>
                             </li>
@@ -100,11 +106,17 @@
                     </h1>
                     <h3>
                         <ul>
-                            <li class="fragment fade-up">安裝佈署的方法要很容易&自動化</li>
-                            <li class="fragment fade-up">遷移到更↑或↓配置的硬體流程簡易&快</li>
+                            <li class="fragment fade-up">
+                                <div style="white-space: nowrap;">安裝佈署的方法要很容易&自動化</div>
+                            </li>
+                            <li class="fragment fade-up">
+                                <div style="white-space: nowrap;">遷移到更↑或↓配置的硬體流程簡易&快</div>
+                            </li>
                             <li class="fragment fade-up"><br/>
-                                <del style="font-weight: lighter">最好還不用多花錢&#x1f4b8;
-                                    <del>
+                                <div style="white-space: nowrap;">
+                                    <del style="font-weight: lighter">最好還不用多花錢&#x1f4b8;
+                                        <del>
+                                </div>
                             </li>
                         </ul>
                     </h3>
@@ -140,16 +152,22 @@
                 <section>
                     <h2>Docker<br/>(docker-engine)<br/>是什麼</h2>
                     <ul>
-                        <li class="fragment fade-up" data-fragment-index="1">Light Weight VM?
+                        <li class="fragment fade-up" data-fragment-index="1">
+                            <div style="white-space: nowrap;">Light Weight VM?</div>
                             <div style="font-size:80%" class="fragment fade-up" data-fragment-index="2">
                                 <a href="https://blog.docker.com/2016/03/containers-are-not-vms/">Containers are not VMs</a></div>
                         </li>
-                        <li class="fragment fade-up" data-fragment-index="3">Runtime?</li>
-                        <li class="fragment fade-up" data-fragment-index="4">Sandbox?</li>
-                        <li class="fragment fade-up" data-fragment-index="5">Transport Package Format?</li>
+                        <li class="fragment fade-up" data-fragment-index="3">
+                            <div style="white-space: nowrap;">Runtime?</div>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="4">
+                            <div style="white-space: nowrap;">Sandbox?</div>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="5">
+                            <div style="white-space: nowrap;">Transport Package Format?</div>
+                        </li>
                     </ul>
-                    <div style="display: block; position: absolute; top: 0px; left: 0px; width:100%; height: 100%" 
-                        class="fragment fade-up" data-fragment-index="6">
+                    <div style="display: block; position: absolute; top: 0px; left: 0px; width:100%; height: 100%" class="fragment fade-up" data-fragment-index="6">
                         <div class="fragment fade-out" data-fragment-index="7">
                             <img style="width:100%; height: 100%" data-src="./pic/ElephantBlindmen.png" />
                         </div>
@@ -159,9 +177,15 @@
                     <h2>Docker<br/>(docker-engine)<br/>是什麼</h2>
                     <h3 class="fragment fade-up" data-fragment-index="1">不管它是什麼，要做的就是：</h3>
                     <ol>
-                        <li class="fragment fade-up" data-fragment-index="2">將應用程式執行環境進行<b>包裝</b>產生可佈署的『image』</li>
-                        <li class="fragment fade-up" data-fragment-index="3">『image』藉由一些步驟導入到目標端機器的docker上</li>
-                        <li class="fragment fade-up" data-fragment-index="4">『image』在目標端的docker上啟動，執行該應用</li>
+                        <li class="fragment fade-up" data-fragment-index="2">
+                            <div style="white-space: nowrap;">將應用程式執行環境進行<b>包裝</b>產生可佈署的『image』</div>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="3">
+                            <div style="white-space: nowrap;">『image』藉由一些步驟導入到目標端機器的docker上</div>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="4">
+                            <div style="white-space: nowrap;">『image』在目標端的docker上啟動執行該應用</div>
+                        </li>
                     </ol>
                 </section>
                 <section>
@@ -282,36 +306,42 @@ services:
                     <h3>寫dockerfile檔以docker build建立出『image』</h3>
                     <h4 class="fragment fade-up" data-fragment-index="0">如何分層?</h4>
                     <ol>
-                        <li class="fragment fade-up" data-fragment-index="1">開發技術</li>
-                        <li class="fragment fade-up" data-fragment-index="2">商業邏輯</li>
-                        <li class="fragment fade-up" data-fragment-index="3">DevOps流程</li>
+                        <li class="fragment fade-up" data-fragment-index="1">
+                            <div style="white-space: nowrap;">開發技術</div>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="2">
+                            <div style="white-space: nowrap;">商業邏輯</div>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="3">
+                            <div style="white-space: nowrap;">DevOps流程</div>
+                        </li>
                     </ol>
                 </section>
                 <section>
                     <h4 style="text-align: left;">實務上會碰到5種類型的坑：</h4>
                     <p>
                         <div style="text-align: left; margin: 5px">
-                            <span class="fragment fade-up" data-fragment-index="7">0. </span><span class="fragment fade-up"
+                            <label class="fragment fade-up" data-fragment-index="7">0.&nbsp;</label><span class="fragment fade-up"
                                 data-fragment-index="1">設裡面設外面</span>
                         </div>
                         <div style="text-align: left; margin: 5px">
-                            <span class="fragment fade-up" data-fragment-index="7">1. </span><span class="fragment fade-up"
+                            <label class="fragment fade-up" data-fragment-index="7">1.&nbsp;</label><span class="fragment fade-up"
                                 data-fragment-index="2">過個水變權貴</span>
                         </div>
                         <div style="text-align: left; margin: 5px">
-                            <span class="fragment fade-up" data-fragment-index="7">2. </span><span class="fragment fade-up"
+                            <label class="fragment fade-up" data-fragment-index="7">2.&nbsp;</label><span class="fragment fade-up"
                                 data-fragment-index="3">網路卡無極限</span>
                         </div>
                         <div style="text-align: left; margin: 5px">
-                            <span class="fragment fade-up" data-fragment-index="7">3. </span><span class="fragment fade-up"
+                            <label class="fragment fade-up" data-fragment-index="7">3.&nbsp;</label><span class="fragment fade-up"
                                 data-fragment-index="4">Infra自幹有點累</span>
                         </div>
                         <div style="text-align: left; margin: 5px">
-                            <span class="fragment fade-up" data-fragment-index="7">4. </span><span class="fragment fade-up"
+                            <label class="fragment fade-up" data-fragment-index="7">4.&nbsp;</label><span class="fragment fade-up"
                                 data-fragment-index="5">根本不是code的罪</span>
                         </div>
                         <div style="text-align: left; margin: 5px">
-                            <span class="fragment fade-up" data-fragment-index="7">5. </span><span class="fragment fade-up"
+                            <label class="fragment fade-up" data-fragment-index="7">5.&nbsp;</label><span class="fragment fade-up"
                                 data-fragment-index="6">app要跟著轉變，時間會說明一切</span>
                         </div>
                     </p>
