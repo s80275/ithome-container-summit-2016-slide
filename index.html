@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Docker從入門到入迷</title>
     <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/vs.min.css">
     <link rel="stylesheet" href="css/theme/black.css" id="theme">
     <!--Add support for earlier versions of Internet Explorer -->
     <!--[if lt IE 9]>
@@ -69,7 +70,7 @@
                     <p>首先來說為何要<b style="font-size:150%">容器化</b>...</p>
                 </section>
                 <section>
-                    <img src="./pic/game_DAU.jpg" />
+                    <img data-src="./pic/game_DAU.jpg" />
                     <small class="caption">
                         來源：<a href="http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html">http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html</a>
                     </small>
@@ -145,16 +146,16 @@
                         <li class="fragment fade-up" data-fragment-index="4">Sandbox?</li>
                         <li class="fragment fade-up" data-fragment-index="5">Transport Package Format?</li>
                     </ul>
-                    <img class="fragment fade-up" data-fragment-index="6" style="display: block; margin: auto; position: absolute; top: 0px;"
-                        width="100%" data-src="./pic/ElephantBlindmen.png" />
+                    <img class="fragment fade-up" data-fragment-index="6" style="display: block; position: absolute; top: 0px; left: 0px;" width="100%"
+                        data-src="./pic/ElephantBlindmen.png" />
                 </section>
                 <section>
                     <h2>Docker<br/>(docker-engine)<br/>是什麼</h2>
                     <h3 class="fragment fade-up" data-fragment-index="1">不管它是什麼，要做的就是：</h3>
                     <ol>
                         <li class="fragment fade-up" data-fragment-index="2">將應用程式執行環境進行<b>包裝</b>產生可佈署的『image』</li>
-                        <li class="fragment fade-up" data-fragment-index="3">『image』藉由一些步驟儲存、導入到目標端機器的docker上</li>
-                        <li class="fragment fade-up" data-fragment-index="4">『image』在目標端的docker上拆包、啟動，執行該應用</li>
+                        <li class="fragment fade-up" data-fragment-index="3">『image』藉由一些步驟導入到目標端機器的docker上</li>
+                        <li class="fragment fade-up" data-fragment-index="4">『image』在目標端的docker上啟動，執行該應用</li>
                     </ol>
                 </section>
                 <section>
@@ -180,7 +181,7 @@
                                         <li class="fragment fade-up" data-fragment-index="8">多個容器可以共享單一volume</li>
                                         <li class="fragment fade-up" data-fragment-index="9">容器的volume可以對應到實體機器FS位置</li>
                                         <li class="fragment fade-up" data-fragment-index="10">image產生時可以定義內部路徑位置的volme，並由另一個容器啟動時使用
-                                            <br/>(<a href="https://docs.docker.com/engine/reference/run/#/volume-shared-filesystems">--volumes-from=""</a>)</li>
+                                            <br/>(<a href="http://docs.docker.com/engine/reference/run/#/volume-shared-filesystems">--volumes-from</a>)</li>
                                     </ul>
                                 </li>
                             </ol>
@@ -194,7 +195,60 @@
                             docker的client端操作單用指令列打命令落落長
                         </li>
                         <li class="fragment fade-up" data-fragment-index="2">運作環境的配置通常不會只有單一個容器</li>
-                        <li class="fragment fade-up" data-fragment-index="3">動態的環境變數&設定檔對應</li>
+                        <li class="fragment fade-up" data-fragment-index="3">根據執行環境有不同的環境變數&設定檔對應</li>
+                    </ul>
+                    <div><br/></div>
+                    <h4 class="fragment fade-up" data-fragment-index="4">需要有類似Bash Script批次化一堆手工命令操作步驟的工具</h4>
+                </section>
+                <section>
+                    <pre>
+                        <code class="hljs yaml">
+version: '2'
+
+services:
+  <mark>varnish-base</mark>:
+    image: ${COMPOSE_PROJECT_NAME}/varnish-base
+    build: conf/varnish
+    env_file:
+      - ./conf/varnish/config/${VILLE_SERV_CONF}/web.env
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - "80"
+
+  <mark>nginx-base</mark>:
+    image: ${COMPOSE_PROJECT_NAME}/nginx-base
+    build: conf/nginx
+    env_file:
+      - ./env_file/${VILLE_SERV_CONF}.env
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - "80"
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h2>使用Docker Compose的優點</h2>
+                    <ul>
+                        <li class="fragment fade-up" data-fragment-index="1">
+                            多容器運作環境的組態用.yaml檔案控制
+                            <ol>
+                                <li class="fragment fade-up" data-fragment-index="2"><code>Compose Project</code>目錄&namespace的概念</li>
+                                <li class="fragment fade-up" data-fragment-index="3">保證多容器的啟動順序不出錯</li>
+                                <li class="fragment fade-up" data-fragment-index="4">.yaml檔案所定義的
+                                    <a href="http://docs.docker.com/compose/compose-file/#/service-configuration-reference">容器服務(service)</a>可用繼承的概念來擴展</li>
+                            </ol>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="5">受控制的多個容器可批次化進行DOCKER指令操作
+                            <code class="fragment fade-up" data-fragment-index="6"><a href="http://docs.docker.com/compose/reference/pull/">docker-compose pull</a></code>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <code class="fragment fade-up" data-fragment-index="7"><a href="http://docs.docker.com/compose/reference/push/">docker-compose push</a></code>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="8">配合執行環境可使用不同設定檔對應<br/>
+                            <span class="fragment fade-up" data-fragment-index="9">
+                            <a href="https://docs.docker.com/compose/compose-file/#/variable-substitution">Variable Substitution</a>
+                            </span>
+                        </li>
                     </ul>
                 </section>
             </section>
@@ -207,6 +261,16 @@
     <script>
 		// Required, even if empty.
 		Reveal.initialize({
+             // Enable slide navigation via mouse wheel
+            mouseWheel: true,
+            // Hides the address bar on mobile devices
+            hideAddressBar: true,
+            slideNumber: 'c/t',
+            dependencies: [
+                { src: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js', 
+                async: true, callback: function() { 
+                    hljs.initHighlightingOnLoad(); 
+                }}]
 		});
 	</script>
 </body>
