@@ -32,20 +32,22 @@
             </section>
             <section>
                 <section>
-                    <h1>這裡會講到:</h1>
-                    <h2>
+                    <h1>這裡會講到</h1>
+                    <h3>
                         <ul>
                             <li>Docker</li>
                             <li>Docker Compose</li>
                         </ul>
-                    </h2>
+                    </h3>
                 </section>
                 <section>
-                    <h1>不會講到:</h1>
+                    <h1>不會講到</h1>
                     <h3>
-                        <ul>
-                            <li><a href="http://kubernetes.io/">Kubernates</a></li>
-                            <li><a href="http://mesos.apache.org/">Mesos</a></li>
+                        <ul style="text-align: center">
+                            <li style="text-align: left">Kubernates<br/><span>
+                            <a href="http://kubernetes.io">http://kubernetes.io</a></span></li>
+                            <li style="text-align: left">Mesos<br/><span>
+                                <a href="http://mesos.apache.org">http://mesos.apache.org</a></span></li>
                         </ul>
                     </h3>
                     <p>以及其他很複雜但除範例之外<br/>不知道怎麼跑起來的方案&#x1f60f;</p>
@@ -81,12 +83,12 @@
                         流量特性：
                     </h2>
                     <h3>
-                        <ul>
+                        <ul style="margin: 0px">
                             <li class="fragment fade-up" data-fragment-index="1">一開始會有暴衝流量(衝首發)</li>
                             <li class="fragment fade-up" data-fragment-index="2">如果紅了還會繼續暴衝(病毒式傳播)</li>
                             <li class="fragment fade-up" data-fragment-index="3">如果不紅就會掉得很快(該撤收了)</li>
                             <li class="fragment fade-up" data-fragment-index="4">
-                                真的不紅主動減少維護人力硬體等的開銷<br/><small class="fragment fade-up" data-fragment-index="5">(自動營運)</small>
+                                <div style="white-space: nowrap;">真的不紅主動減少維護人力硬體等開銷</div><small class="fragment fade-up" data-fragment-index="5">(自動營運)</small>
                             </li>
                         </ul>
                     </h3>
@@ -146,8 +148,12 @@
                         <li class="fragment fade-up" data-fragment-index="4">Sandbox?</li>
                         <li class="fragment fade-up" data-fragment-index="5">Transport Package Format?</li>
                     </ul>
-                    <img class="fragment fade-up" data-fragment-index="6" style="display: block; position: absolute; top: 0px; left: 0px;" width="100%"
-                        data-src="./pic/ElephantBlindmen.png" />
+                    <div style="display: block; position: absolute; top: 0px; left: 0px; width:100%; height: 100%" 
+                        class="fragment fade-up" data-fragment-index="6">
+                        <div class="fragment fade-out" data-fragment-index="7">
+                            <img style="width:100%; height: 100%" data-src="./pic/ElephantBlindmen.png" />
+                        </div>
+                    </div>
                 </section>
                 <section>
                     <h2>Docker<br/>(docker-engine)<br/>是什麼</h2>
@@ -339,6 +345,14 @@ services:
                     hljs.initHighlightingOnLoad(); 
                 }}]
 		});
+
+        if( window.location.search.match( /print-pdf/gi ) ) {
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'css/print/pdf.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        }
 	</script>
 </body>
 
