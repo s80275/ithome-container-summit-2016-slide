@@ -252,7 +252,55 @@ services:
                     </ul>
                 </section>
             </section>
+            <section>
+                <section>
+                    <h2>
+                        容器化的步驟
+                    </h2>
+                </section>
+                <section>
+                    <h3>
+                        既有應用程式docker化的方法：
+                    </h3>
+                    <ol>
+                        <li class="fragment fade-up" data-fragment-index="1">寫dockerfile檔以docker build建立出『image』</li>
+                        <li class="fragment fade-up" data-fragment-index="2">寫docker-compose.yml檔配置組態</li>
+                        <li class="fragment fade-up" data-fragment-index="3">docker-compose up，打完收工</li>
+                    </ol>
+                    <p class="fragment fade-up" data-fragment-index="4">
+                        <del>這麼簡單piece of cake&#x1f370;?!大家可以去吃點心了?!</del>
+                    </p>
+                    <h4 class="fragment fade-up" data-fragment-index="5">當然不是！&#x1f613;</h4>
+                </section>
+                <section>
+                    <h3>寫dockerfile檔以docker build建立出『image』</h3>
+                    <h4 class="fragment fade-up" data-fragment-index="0">如何分層?</h4>
+                    <ol>
+                        <li class="fragment fade-up" data-fragment-index="1">開發技術</li>
+                        <li class="fragment fade-up" data-fragment-index="2">商業邏輯</li>
+                        <li class="fragment fade-up" data-fragment-index="3">DevOps流程</li>
+                    </ol>
+                </section>
+                <section>
+                    <p class="fragment fade-up" data-fragment-index="0">實務上做出能跑的『image』會碰到五種坑：
+                        <ol>
+                            <li class="fragment fade-up" data-fragment-index="1">設裡面設外面</li>
+                            <li class="fragment fade-up" data-fragment-index="2">過個水變權限</li>
+                            <li class="fragment fade-up" data-fragment-index="3">網路卡無極限</li>
+                            <li class="fragment fade-up" data-fragment-index="4">Infra自幹有點累</li>
+                            <li class="fragment fade-up" data-fragment-index="5">根本不是code的罪</li>
+                        </ol>
+                    </p>
+                </section>
 
+            </section>
+            <section>
+                <section>
+                    <h2>
+                        實際範例Demo
+                    </h2>
+                </section>
+            </section>
         </div>
     </div>
     <script src="lib/js/head.min.js"></script>
