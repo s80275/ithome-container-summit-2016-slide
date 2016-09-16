@@ -331,15 +331,18 @@ services:
                 </section>
                 <section>
                     <div style="display: block; position: absolute; top: 0px; left: 0px;">
-                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " />
+                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " /><br/>
+                        <p class="fragment fade-out" data-fragment-index="0">Layering...</p>
                     </div>
-                    <div style="display: block; position: absolute; top: 0px; left: 0px;"
-                     class="fragment fade-in" data-fragment-index="1">
-                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " />
+                    <div style="display: block; position: absolute; top: 0px; left: 0px;" class="fragment current-visible" data-fragment-index="1">
+                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " /><br/><p>Ops mode</p>
+                    </div>
+                    <div style="display: block; position: absolute; top: 0px; left: 0px;" class="fragment" data-fragment-index="2">
+                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " /><br/><p>Dev mode</p>
                     </div>
                 </section>
                 <section>
-                    <h4 style="text-align: left; ">實務上在既有應用容器化時會碰到5種類的坑：</h4>
+                    <h4 style="text-align: left; ">實務上在既有應用系統容器化會碰到5種類型的坑：</h4>
                     <p>
                         <div style="text-align: left; margin: 5px ">
                             <label class="fragment fade-up " data-fragment-index="7 ">0.&nbsp;</label><span class="fragment
@@ -398,16 +401,16 @@ services:
                 }}],
             chalkboard: {
                 src: './dev_time_volume.json',
-                readOnly: false,
-                transition: 800, 
+                readOnly: undefined,
+                transition: 1000, 
                 toggleChalkboardButton: false,
                 color: [ 'rgba(255,0,0,1)', 'rgba(255,255,255,0.5)' ]
             },
             keyboard: {
                 67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
-                46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
-                 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
-                68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+                // 68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+                45: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when '-' is pressed
+                46: function() { RevealChalkboard.clear() }    // clear chalkboard when 'DEL' is pressed
     },
 		});
 
