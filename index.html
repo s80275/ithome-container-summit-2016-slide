@@ -329,7 +329,7 @@ services:
                         </li>
                     </ol>
                 </section>
-                <section>
+                <section id="image-layering">
                     <div style="display: block; position: absolute; top: 0px; left: 0px;">
                         <img style="border: 0px;" data-src="./pic/docker_image_arch.png " /><br/>
                         <p class="fragment fade-out" data-fragment-index="0">Layering...</p>
@@ -337,7 +337,7 @@ services:
                     <div style="display: block; position: absolute; top: 0px; left: 0px;" class="fragment current-visible" data-fragment-index="1">
                         <img style="border: 0px;" data-src="./pic/docker_image_arch.png " /><br/><p>Ops mode</p>
                     </div>
-                    <div style="display: block; position: absolute; top: 0px; left: 0px;" class="fragment" data-fragment-index="2">
+                    <div style="display: block; position: absolute; top: 0px; left: 0px;" class="fragment fade-in" data-fragment-index="2">
                         <img style="border: 0px;" data-src="./pic/docker_image_arch.png " /><br/><p>Dev mode</p>
                     </div>
                 </section>
@@ -400,8 +400,9 @@ services:
                     hljs.initHighlightingOnLoad(); 
                 }}],
             chalkboard: {
-                src: './dev_time_volume.json',
+                src: './annotation.json',
                 readOnly: undefined,
+                // readOnly: false,
                 transition: 1000, 
                 toggleChalkboardButton: false,
                 color: [ 'rgba(255,0,0,1)', 'rgba(255,255,255,0.5)' ]
