@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Docker從入門到入迷</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/vs.min.css">
     <link rel="stylesheet" href="css/theme/black.css" id="theme">
@@ -152,7 +153,7 @@
                         <li>Dev:
                             <ul>
                                 <li class="fragment fade-up" data-fragment-index="5"><span style="white-space: nowrap;">開發環境≒營運環境</span>，而且不用花時間自己安裝</li>
-                                
+
                                 <li class="fragment fade-up" data-fragment-index="6">不怕過了很久以後要修改程式碼找不到舊版本函式庫&套件工具</li>
                             </ul>
                         </li>
@@ -329,34 +330,43 @@ services:
                     </ol>
                 </section>
                 <section>
-                    <h4 style="text-align: left;">實務上會碰到5種類型的坑：</h4>
+                    <div style="display: block; position: absolute; top: 0px; left: 0px;">
+                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " />
+                    </div>
+                    <div style="display: block; position: absolute; top: 0px; left: 0px;"
+                     class="fragment fade-in" data-fragment-index="1">
+                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " />
+                    </div>
+                </section>
+                <section>
+                    <h4 style="text-align: left; ">實務上在既有應用容器化時會碰到5種類的坑：</h4>
                     <p>
-                        <div style="text-align: left; margin: 5px">
-                            <label class="fragment fade-up" data-fragment-index="7">0.&nbsp;</label><span class="fragment fade-up"
-                                data-fragment-index="6">app要跟著轉變，時間會說明一切</span>
+                        <div style="text-align: left; margin: 5px ">
+                            <label class="fragment fade-up " data-fragment-index="7 ">0.&nbsp;</label><span class="fragment
+                        fade-up " data-fragment-index="6 ">app要跟著轉變，時間會說明一切</span>
                         </div>
-                        <div style="text-align: left; margin: 5px">
-                            <label class="fragment fade-up" data-fragment-index="7">1.&nbsp;</label><span class="fragment fade-up"
-                                data-fragment-index="1">設裡面設外面</span>
+                        <div style="text-align: left; margin: 5px ">
+                            <label class="fragment fade-up " data-fragment-index="7 ">1.&nbsp;</label><span class="fragment
+                        fade-up " data-fragment-index="1 ">設裡面設外面</span>
                         </div>
-                        <div style="text-align: left; margin: 5px">
-                            <label class="fragment fade-up" data-fragment-index="7">2.&nbsp;</label><span class="fragment fade-up"
-                                data-fragment-index="2">過個水變權貴</span>
+                        <div style="text-align: left; margin: 5px ">
+                            <label class="fragment fade-up " data-fragment-index="7 ">2.&nbsp;</label><span class="fragment
+                        fade-up " data-fragment-index="2 ">過個水變權貴</span>
                         </div>
-                        <div style="text-align: left; margin: 5px">
-                            <label class="fragment fade-up" data-fragment-index="7">3.&nbsp;</label><span class="fragment fade-up"
-                                data-fragment-index="3">網路卡無極限</span>
+                        <div style="text-align: left; margin: 5px ">
+                            <label class="fragment fade-up " data-fragment-index="7 ">3.&nbsp;</label><span class="fragment
+                        fade-up " data-fragment-index="3 ">網路卡無極限</span>
                         </div>
-                        <div style="text-align: left; margin: 5px">
-                            <label class="fragment fade-up" data-fragment-index="7">4.&nbsp;</label><span class="fragment fade-up"
-                                data-fragment-index="4">Infra自幹有點累</span>
+                        <div style="text-align: left; margin: 5px ">
+                            <label class="fragment fade-up " data-fragment-index="7 ">4.&nbsp;</label><span class="fragment
+                        fade-up " data-fragment-index="4 ">Infra自幹有點累</span>
                         </div>
-                        <div style="text-align: left; margin: 5px">
-                            <label class="fragment fade-up" data-fragment-index="7">5.&nbsp;</label><span class="fragment fade-up"
-                                data-fragment-index="5">根本不是code的罪</span>
+                        <div style="text-align: left; margin: 5px ">
+                            <label class="fragment fade-up " data-fragment-index="7 ">5.&nbsp;</label><span class="fragment
+                        fade-up " data-fragment-index="5 ">根本不是code的罪</span>
                         </div>
                     </p>
-                    <h4 class="fragment fade-up" data-fragment-index="8">其他無法歸類的坑也很多......</h4>
+                    <h4 class="fragment fade-up " data-fragment-index="8 ">其他無法歸類的坑也很多......</h4>
                 </section>
 
             </section>
@@ -369,8 +379,8 @@ services:
             </section>
         </div>
     </div>
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+    <script src="lib/js/head.min.js "></script>
+    <script src="js/reveal.js "></script>
 
     <script>
 		// Required, even if empty.
@@ -381,10 +391,24 @@ services:
             hideAddressBar: true,
             slideNumber: 'c/t',
             dependencies: [
+                { src: 'plugin/chalkboard/chalkboard.js' },
                 { src: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js', 
                 async: true, callback: function() { 
                     hljs.initHighlightingOnLoad(); 
-                }}]
+                }}],
+            chalkboard: {
+                src: './dev_time_volume.json',
+                readOnly: false,
+                transition: 800, 
+                toggleChalkboardButton: false,
+                color: [ 'rgba(255,0,0,1)', 'rgba(255,255,255,0.5)' ]
+            },
+            keyboard: {
+                67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+                46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+                 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+                68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+    },
 		});
 
         if( window.location.search.match( /print-pdf/gi ) ) {
