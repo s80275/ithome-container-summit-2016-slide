@@ -526,7 +526,7 @@ networks:
                     </p>
                 </section>
                 <section>
-                    <h4 style="text-align: left; ">實務上在既有應用系統容器化會碰到5種類型的坑：</h4>
+                    <h3 style="text-align: left; ">實務上在既有應用系統容器化會碰到5種類型的坑：</h3>
                     <p>
                         <div style="text-align: left; padding: 5px">
                             <label class="fragment fade-up " data-fragment-index="7">0.&nbsp;</label><span class="fragment fade-up "
@@ -573,6 +573,40 @@ networks:
                         </div>
                     </p>
                     <h4 class="fragment fade-up " data-fragment-index="9">其他無法歸類的坑也很多......</h4>
+                </section>
+                <section>
+                    <h4>設裡面設外面</h4>
+                    <div style="text-align: left;">
+                        <ol>
+                            <li>
+                                <ul>
+                                    <li>
+                                        Set <code>/etc/hosts</code> map dns name to IP:<br/>
+                                    </li>
+                                    <li>
+                                        設在容器<span class="fragment fade-up" data-fragment-index="1">裡面</span>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+                                <ul>
+                                    <li>
+                                        Redis Linux kernel overcommit memory setting:<br/>
+                                        <small>
+                                <a href="http://redis.io/topics/admin" target="_blank">Add vm.overcommit_memory = 1 to /etc/sysctl.conf and then reboot or run the command <code>sysctl vm.overcommit_memory=1</code></a>
+                                        </small>
+                                    </li>
+                                    <li>
+                                        設在容器<span class="fragment fade-up" data-fragment-index="2">外面跑docker-engine的Host環境</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <hr/>
+                        <span class="fragment fade-up" data-fragment-index="3">設定是給應用程式本身讀的？<br/>還是設定給執行環境(OS)讀的？<br/>容器化的隔離技術到底是怎麼實現的？？<small class="fragment fade-up" data-fragment-index="4"><bold>(該學的底層功課還是得學)</bold></small></span>
+                    </div>
                 </section>
 
             </section>
