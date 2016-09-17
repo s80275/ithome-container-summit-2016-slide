@@ -52,9 +52,9 @@
                     <h3>
                         <ul style="text-align: center">
                             <li style="text-align: left">Kubernates<br/><span>
-                            <a href="http://kubernetes.io">http://kubernetes.io</a></span></li>
+                            <a href="http://kubernetes.io" target="_blank">http://kubernetes.io</a></span></li>
                             <li style="text-align: left">Mesos<br/><span>
-                                <a href="http://mesos.apache.org">http://mesos.apache.org</a></span></li>
+                                <a href="http://mesos.apache.org" target="_blank">http://mesos.apache.org</a></span></li>
                         </ul>
                     </h3>
                     <p>以及其他很複雜但除範例之外<br/>不知道怎麼跑起來的方案&#x1f60f;</p>
@@ -69,9 +69,9 @@
                 </section>
                 <section>
                     <p>要用怎樣的方法來最小幅度<b style="font-size:200%">改造</b>舊程式， 以便能夠用
-                        <b><a href="https://github.com/docker/docker">Docker</a></b> + <b><a href="https://github.com/docker/compose">Docker Compose</a></b>的組合，
+                        <b><a href="https://github.com/docker/docker" target="_blank">Docker</a></b> + <b><a href="https://github.com/docker/compose" target="_blank">Docker Compose</a></b>的組合，
                         配合內部架設
-                        <b><a href="https://github.com/docker/distribution">Docker影像庫</a></b>來做開發時期的維護及營運時期的運行。</p>
+                        <b><a href="https://github.com/docker/distribution" target="_blank">Docker影像庫</a></b>來做開發時期的維護及營運時期的運行。</p>
                 </section>
             </section>
             <section>
@@ -81,7 +81,7 @@
                 <section>
                     <img data-src="./pic/game_DAU.jpg" />
                     <small class="caption">
-                        來源：<a href="http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html">http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html</a>
+                        來源：<a href="http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html" target="_blank">http://blog.gameanalytics.com/blog/what-analysing-400-games-taught-us.html</a>
                     </small>
                     <p class="fragment fade-up" style="font-size:120%">從正式上線營運開始後三星期到一個月之間是<br/>關鍵<span style="font-size:120%">&#x1f4b0;</span>觀察期</p>
                 </section>
@@ -152,7 +152,7 @@
                                     <div class="fragment fade-up" data-fragment-index="3">(port mapping且容器內的程式不需改設定)</div>
                                 </li>
                                 <li class="fragment fade-up" data-fragment-index="4">萬一要退版，藉由Docker的
-                                    <a href="https://docs.docker.com/v1.5/terms/layer/#union-file-system">Union File System</a>                                    特性可快速退回先前的狀態來回溯服務狀態
+                                    <a href="https://docs.docker.com/v1.5/terms/layer/#union-file-system" target="_blank">Union File System</a>                                    特性可快速退回先前的狀態來回溯服務狀態
                                 </li>
                             </ul>
                         </li>
@@ -173,7 +173,7 @@
                         <li class="fragment fade-up" data-fragment-index="1">
                             <div style="white-space: nowrap;">Light Weight VM?</div>
                             <div style="font-size:80%" class="fragment fade-up" data-fragment-index="2">
-                                <a href="https://blog.docker.com/2016/03/containers-are-not-vms/">Containers are not VMs</a></div>
+                                <a href="http://blog.docker.com/2016/03/containers-are-not-vms/" target="_blank" style="z-index: 5;">Containers are not VMs</a></div>
                         </li>
                         <li class="fragment fade-up" data-fragment-index="3">
                             <div style="white-space: nowrap;">Runtime?</div>
@@ -185,9 +185,10 @@
                             <div style="white-space: nowrap;">Transport Package Format?</div>
                         </li>
                     </ul>
-                    <div style="display: block; position: absolute; top: 0px; left: 0px; width:100%; height: 100%" class="fragment fade-up" data-fragment-index="6">
-                        <div class="fragment fade-out" data-fragment-index="7">
-                            <img style="width:100%; height: 100%" data-src="./pic/ElephantBlindmen.png" />
+                    <div style="display: block; position: absolute; top: 0px; left: 0px; width:100%; height: 100%;pointer-events: none;"
+                        class="fragment fade-up" data-fragment-index="6">
+                        <div style="pointer-events: none;" class="fragment fade-out" data-fragment-index="7">
+                            <img style="width: 100%;height: 100%;pointer-events: none;" data-src="./pic/ElephantBlindmen.png" />
                         </div>
                     </div>
                 </section>
@@ -211,7 +212,7 @@
                     <div style="display: table; width:100%; overflow:hidden;">
                         <div style="display: table-cell; vertical-align: middle;">
                             <img style="display: block; margin: 0px;" data-src="./pic/engine-components-flow.png" /><br/>
-                            <small>來源：<a href="https://docs.docker.com/engine/understanding-docker/#/what-is-docker-engine">官網docker-engine</a></small>
+                            <small>來源：<a href="https://docs.docker.com/engine/understanding-docker/#/what-is-docker-engine" target="_blank">官網docker-engine</a></small>
                         </div>
                         <div style="display: table-cell; margin-left: 20px; vertical-align: middle; float:right">
                             <ol>
@@ -224,12 +225,13 @@
                                 <li class="fragment fade-up" data-fragment-index="5">Union File System分層構造<br/>
                                     <span class="fragment fade-up" data-fragment-index="6">
                                         <small>(for static data & code or exe)</small></span></li>
-                                <li class="fragment fade-up" data-fragment-index="7"><a href="https://docs.docker.com/engine/tutorials/dockervolumes/">Volume</a> for state data<br/>
+                                <li class="fragment fade-up" data-fragment-index="7"><a href="https://docs.docker.com/engine/tutorials/dockervolumes/" target="_blank">Volume</a>                                    for state data<br/>
                                     <ul style="font-size: 80%">
                                         <li class="fragment fade-up" data-fragment-index="8">多個容器可以共享單一volume</li>
                                         <li class="fragment fade-up" data-fragment-index="9">容器的volume可以對應到實體機器FS位置</li>
                                         <li class="fragment fade-up" data-fragment-index="10">image產生時可以定義內部路徑位置的volme，並由另一個容器啟動時使用
-                                            <br/>(<a href="http://docs.docker.com/engine/reference/run/#/volume-shared-filesystems">--volumes-from</a>)</li>
+                                            <br/>(<a href="http://docs.docker.com/engine/reference/run/#/volume-shared-filesystems"
+                                                target="_blank">--volumes-from</a>)</li>
                                     </ul>
                                 </li>
                             </ol>
@@ -254,25 +256,62 @@
 version: '2'
 
 services:
-  <mark>varnish-base</mark>:
-    image: ${COMPOSE_PROJECT_NAME}/varnish-base
-    build: conf/varnish
+  <mark>varnish</mark>:
+    extends:
+      file: docker-compose.base.yml
+      service: varnish-base
     env_file:
-      - ./conf/varnish/config/${VILLE_SERV_CONF}/web.env
+      - ./conf/varnish-cache/env/web.env
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-    expose:
-      - "80"
+      - ./conf/varnish-cache/vcl:/etc/varnish/
+    links:
+      - default_site:normal_site
+    ports:
+      - "80:80"
+    networks:
+      - back_end
 
-  <mark>nginx-base</mark>:
-    image: ${COMPOSE_PROJECT_NAME}/nginx-base
-    build: conf/nginx
-    env_file:
-      - ./env_file/${VILLE_SERV_CONF}.env
+  # application container
+  <mark>default_site</mark>:
+    extends:
+      file: docker-compose.base.yml
+      service: nginx-base
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-    expose:
-      - "80"
+      - ./conf/nginx/config:/etc/nginx
+    links:
+      - phpfpm
+    volumes_from:
+      - phpfpm
+    networks:
+      - back_end
+
+  <mark>phpfpm</mark>:
+    extends:
+      file: docker-compose.base.yml
+      service: phpfpm-base
+    volumes:
+      - ./conf/phpfpm/config:/usr/local/etc
+      - ./src/php:/var/www/html
+    links:
+      - redis0cache
+    networks:
+      - back_end
+
+  #cache container
+  <mark>redis0cache</mark>:
+    extends:
+      file: docker-compose.base.yml
+      service: redis-base
+    volumes:
+      - ./conf/redis/config:/usr/local/etc/redis
+      - ./data/redis:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - back_end
+
+networks:
+  back_end:
                         </code>
                     </pre>
                 </section>
@@ -285,16 +324,16 @@ services:
                                 <li class="fragment fade-up" data-fragment-index="2"><code>Compose Project</code>目錄&namespace的概念</li>
                                 <li class="fragment fade-up" data-fragment-index="3">保證多容器的啟動順序不出錯</li>
                                 <li class="fragment fade-up" data-fragment-index="4">.yaml檔案所定義的
-                                    <a href="http://docs.docker.com/compose/compose-file/#/service-configuration-reference">容器服務(service)</a>可用繼承的概念來擴展</li>
+                                    <a href="http://docs.docker.com/compose/compose-file/#/service-configuration-reference" target="_blank">容器服務(service)</a>可用繼承的概念來擴展</li>
                             </ol>
                         </li>
                         <li class="fragment fade-up" data-fragment-index="5">受控制的多個容器可批次化進行DOCKER指令操作
-                            <code class="fragment fade-up" data-fragment-index="6"><a href="http://docs.docker.com/compose/reference/pull/">docker-compose pull</a></code>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <code class="fragment fade-up" data-fragment-index="7"><a href="http://docs.docker.com/compose/reference/push/">docker-compose push</a></code>
+                            <code class="fragment fade-up" data-fragment-index="6"><a href="http://docs.docker.com/compose/reference/pull/" target="_blank">docker-compose pull</a></code>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <code class="fragment fade-up" data-fragment-index="7"><a href="http://docs.docker.com/compose/reference/push/" target="_blank">docker-compose push</a></code>
                         </li>
                         <li class="fragment fade-up" data-fragment-index="8">配合執行環境可使用不同設定檔對應<br/>
                             <span class="fragment fade-up" data-fragment-index="9">
-                            <a href="https://docs.docker.com/compose/compose-file/#/variable-substitution">Variable Substitution</a>
+                            <a href="https://docs.docker.com/compose/compose-file/#/variable-substitution" target="_blank">Variable Substitution</a>
                             </span>
                         </li>
                     </ul>
@@ -385,24 +424,24 @@ services:
                             </li>
                             <li class="fragment fade-up" data-fragment-index="3">
                                 使用volume mapping的方式將原本建置流程產生的執行檔直接餵進去讓docker容器使用，進行開發測試。<br/>
-                                <small class="fragment fade-up" data-fragment-index="4">（<del>軟體開發動力學第0定律—可以跑就好&#x1F643;</del>）</small>
+                                <small class="fragment fade-up" data-fragment-index="4">（<del>軟體開發動力學第0定律—<b>可以跑就好</b>&#x1F643;</del>）</small>
                             </li>
                             <li class="fragment fade-up" data-fragment-index="5">
                                 封裝開發時期產出物：
                                 <ul class="fa fa-ul">
                                     <li class="fa fragment fade-up" data-fragment-index="6"><i class="fa fa-li fa-check-square"></i>
                                         <span>
-                                        撰寫新dockerfile繼承自原本開發時期使用的docker image，新增的add指令動作將建置成果執行檔加入image。
+                                        撰寫新dockerfile繼承自原本開發時期使用的docker image，新增的<a href="https://docs.docker.com/engine/reference/builder/#add" target="_blank">ADD</a>/<a href="https://docs.docker.com/engine/reference/builder/#copy" target="_blank">COPY</a>指令動作將建置成果執行檔加入image。
                                         </span>
                                     </li>
                                     <li class="fa fragment fade-up" data-fragment-index="7"><i class="fa fa-li fa-check-square"></i>
                                         <span>
-                                        採用『<a href="https://docs.docker.com/engine/tutorials/dockervolumes/#/creating-and-mounting-a-data-volume-container">data volume container</a>』的方式把<code>設定檔</code>(不含Game Table資料)封裝產生docker image。
+                                        採用『<a href="https://docs.docker.com/engine/tutorials/dockervolumes/#/creating-and-mounting-a-data-volume-container" target="_blank">data volume container</a>』的方式把<code>設定檔</code>(不含Game Table資料)封裝產生docker image。
                                         </span>
                                     </li>
                                     <li class="fa fragment fade-up" data-fragment-index="8"><i class="fa fa-li fa-check-square"></i>
                                         <span>
-                                        以上兩種docker image要釋出時記得根據版本號加<a href="http://docs.docker.com/engine/reference/commandline/tag/">tag</a>。
+                                        以上兩種docker image要釋出時記得根據版本號加<a href="http://docs.docker.com/engine/reference/commandline/tag/" target="_blank">tag</a>。
                                         </span>
                                     </li>
                                 </ul>
@@ -418,10 +457,18 @@ services:
                         Game Table資料導入＆驗證審核：
                         <ol style="font-size: 80%">
                             <li class="fragment fade-up" data-fragment-index="1">
-
+                                遊戲企劃使用除了Game Table目錄資料由volume mapping導入，其他都是由開發團隊釋出的docker image搭建起來的系統上，實際執行測試遊戲，即時修改及驗證Game Table的資料正確性。
                             </li>
                             <li class="fragment fade-up" data-fragment-index="2">
-
+                                資料測試無誤後，釋出：
+                                <ul class="fa fa-ul">
+                                    <li class="fa fragment fade-up" data-fragment-index="3"><i class="fa fa-li fa-check-square"></i>
+                                        以<a href="https://docs.docker.com/engine/tutorials/dockervolumes/#/creating-and-mounting-a-data-volume-container" target="_blank">data volume container</a>的方式將Game Table資料封裝進<span style="white-space:nowrap">docker image</span>。
+                                    </li>
+                                    <li class="fa fragment fade-up" data-fragment-index="4"><i class="fa fa-li fa-check-square"></i>
+                                        docker image釋出時加<a href="http://docs.docker.com/engine/reference/commandline/tag/" target="_blank">tag</a>版本號。
+                                    </li>
+                                </ul>
                             </li>
                         </ol>
                     </p>
@@ -485,7 +532,7 @@ services:
 		// Required, even if empty.
 		Reveal.initialize({
              // Enable slide navigation via mouse wheel
-            mouseWheel: true,
+            mouseWheel: false,
             // Hides the address bar on mobile devices
             hideAddressBar: true,
             slideNumber: 'c/t',
