@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <title>Docker從入門到入迷</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        .reveal .fa {
+            font-family: 'FontAwesome';
+            font-style: normal;
+        }
+    </style>
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/vs.min.css">
     <link rel="stylesheet" href="css/theme/black.css" id="theme">
@@ -317,17 +323,35 @@ services:
                 <section>
                     <h3>寫dockerfile檔以docker build建立出『image』</h3>
                     <h4 class="fragment fade-up" data-fragment-index="0">如何分層?</h4>
-                    <ol>
-                        <li class="fragment fade-up" data-fragment-index="1">
-                            <div style="white-space: nowrap;">開發技術</div>
-                        </li>
-                        <li class="fragment fade-up" data-fragment-index="2">
-                            <div style="white-space: nowrap;">商業邏輯</div>
-                        </li>
-                        <li class="fragment fade-up" data-fragment-index="3">
-                            <div style="white-space: nowrap;">DevOps流程</div>
-                        </li>
-                    </ol>
+                    <div style="display: table;width: 100%;">
+                        <div style="display: table-cell; vertical-align:center;width: 50%;">
+                            <div style="font-style: italic;font-size: 120%; font-weight: bold;white-space: nowrap" class="fragment fade-up" data-fragment-index="1">既有業務流程</div>
+                            <ul>
+                                <li class="fragment fade-up" data-fragment-index="2">
+                                    <div style="white-space: nowrap;">開發技術</div>
+                                </li>
+                                <li class="fragment fade-up" data-fragment-index="3">
+                                    <div style="white-space: nowrap;">商業邏輯</div>
+                                </li>
+                                <li class="fragment fade-up" data-fragment-index="4">
+                                    <div style="white-space: nowrap;">DevOps流程</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="display: table-cell; vertical-align:center;width: 50%;">
+                            <div style="font-style: italic;font-size: 120%; font-weight: bold;white-space: nowrap" class="fragment fade-up" data-fragment-index="1">容器化技術特性</div>
+                            <ul class="fa-ul">
+                                <li class="fa fa-check fragment fade-up" data-fragment-index="5" aria-hidden="true">
+                                    <span style="white-space: nowrap;">單一容器功能要單一</span>
+                                </li>
+                                <li class="fa fa-check fragment fade-up" data-fragment-index="6" aria-hidden="true">
+                                    <span style="white-space: nowrap;">image可多場合reuse</span>
+                                </li>
+                                <li class="fa fa-check fragment fade-up" data-fragment-index="7" aria-hidden="true">
+                                    <span style="white-space: nowrap;">方便＆快速deploy</span>
+                                </li>
+                            </ul>
+                        </div>
                 </section>
                 <section id="image-layering">
                     <div style="display: block; position: absolute; top: 0px; left: 0px;">
@@ -335,10 +359,12 @@ services:
                         <p class="fragment fade-out" data-fragment-index="0">Layering...</p>
                     </div>
                     <div style="display: block; position: absolute; top: 0px; left: 0px;" class="fragment current-visible" data-fragment-index="1">
-                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " /><br/><p>Ops mode</p>
+                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " /><br/>
+                        <p>Ops mode</p>
                     </div>
                     <div style="display: block; position: absolute; top: 0px; left: 0px;" class="fragment fade-in" data-fragment-index="2">
-                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " /><br/><p>Dev mode</p>
+                        <img style="border: 0px;" data-src="./pic/docker_image_arch.png " /><br/>
+                        <p>Dev mode</p>
                     </div>
                 </section>
                 <section>
@@ -380,12 +406,12 @@ services:
                     </h2>
                 </section>
             </section>
+            </div>
         </div>
-    </div>
-    <script src="lib/js/head.min.js "></script>
-    <script src="js/reveal.js "></script>
+        <script src="lib/js/head.min.js "></script>
+        <script src="js/reveal.js "></script>
 
-    <script>
+        <script>
 		// Required, even if empty.
 		Reveal.initialize({
              // Enable slide navigation via mouse wheel
