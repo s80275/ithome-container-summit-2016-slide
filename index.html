@@ -71,7 +71,7 @@
                     <p>要用怎樣的方法來最小幅度<b style="font-size:200%">改造</b>舊程式， 以便能夠用
                         <b><a href="https://github.com/docker/docker" target="_blank">Docker</a></b> + <b><a href="https://github.com/docker/compose" target="_blank">Docker Compose</a></b>的組合，
                         配合內部架設
-                        <b><a href="https://github.com/docker/distribution" target="_blank">Docker影像庫</a></b>來做開發時期的維護及營運時期的運行。</p>
+                        <b><a href="https://github.com/docker/distribution" target="_blank">Docker庫</a></b>來做開發時期的維護及營運時期的運行。</p>
                 </section>
             </section>
             <section>
@@ -441,7 +441,7 @@ networks:
                                     </li>
                                     <li class="fa fragment fade-up" data-fragment-index="8"><i class="fa fa-li fa-check-square"></i>
                                         <span>
-                                        以上兩種docker image要釋出時記得根據版本號加<a href="http://docs.docker.com/engine/reference/commandline/tag/" target="_blank">tag</a>。
+                                        以上兩種docker image要release時記得根據版本號加<a href="http://docs.docker.com/engine/reference/commandline/tag/" target="_blank">tag</a>。
                                         </span>
                                     </li>
                                 </ul>
@@ -456,15 +456,29 @@ networks:
                     <p style="text-align: left;">
                         Game Table資料導入＆驗證審核：
                         <ol style="font-size: 80%">
-                            <li class="fragment fade-up" data-fragment-index="1">
-                                遊戲企劃使用除了Game Table目錄資料由volume mapping導入，其他都是由開發團隊釋出的docker image搭建起來的系統上，實際執行測試遊戲，即時修改及驗證Game Table的資料正確性。
+                            <li class="fragment fade-up" data-fragment-index="0">
+                                遊戲企劃使用除了Game Table目錄資料由volume mapping導入，其他都是由開發團隊釋出的docker image搭建起來的系統上，實際執行測試遊戲，即時修改及驗證Game Table的資料正確性。<br/>
+                                <small class="fragment fade-up" data-fragment-index="1">（<del>所以需要程式內先做<span style="white-space: nowrap;color: black;font-family: 'FontAwesome';font-weight: bolder;">
+                                    <kbd style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit;font-weight: inherit; font-size: 0.85em;">↑</kbd>
+                                    <kbd style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit;font-weight: inherit; font-size: 0.85em;">↑</kbd>
+                                    <kbd style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit;font-weight: inherit; font-size: 0.85em;">↓</kbd>
+                                    <kbd style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit;font-weight: inherit; font-size: 0.85em;">↓</kbd>
+                                    <kbd style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit;font-weight: inherit; font-size: 0.85em;">←</kbd>
+                                    <kbd style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit;font-weight: inherit; font-size: 0.85em;">→</kbd>
+                                    <kbd style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit; font-weight: inherit; font-size: 0.85em;">←</kbd>
+                                    <kbd style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit; font-weight: inherit; font-size: 0.85em;">→</kbd>
+                                    <kbd style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit;font-weight: inherit; font-size: 0.85em;">B</kbd>
+                                    <kbd style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit;font-weight: inherit; font-size: 0.85em;">A</kbd>
+                                    </span>
+                                    <a href="https://en.wikipedia.org/wiki/Konami_Code" target="_blank">Konami Code</a>來加快效率才不會測得太辛苦&#x1F643;</del>）</small>
                             </li>
                             <li class="fragment fade-up" data-fragment-index="2">
-                                資料測試無誤後，釋出：
+                                資料測試無誤後：
                                 <ul class="fa fa-ul">
                                     <li class="fa fragment fade-up" data-fragment-index="3"><i class="fa fa-li fa-check-square"></i> 以
                                         <a href="https://docs.docker.com/engine/tutorials/dockervolumes/#/creating-and-mounting-a-data-volume-container" target="_blank">data volume container</a>的方式將Game
-                                        Table資料封裝進<span style="white-space:nowrap">docker image</span>。
+                                        Table資料封裝進
+                                        <span style="white-space:nowrap">docker image</span>。
                                     </li>
                                     <li class="fa fragment fade-up" data-fragment-index="4"><i class="fa fa-li fa-check-square"></i> docker image釋出時加<a href="http://docs.docker.com/engine/reference/commandline/tag/"
                                             target="_blank">tag</a>版本號。
@@ -473,6 +487,9 @@ networks:
                             </li>
                         </ol>
                     </p>
+                    <hr class="fragment fade-up" data-fragment-index="5" />
+                    <p style="font-size:90%" class="fragment fade-up" data-fragment-index="5">
+                        <i class="fa fa-check-square"></i>以上所有可發佈<span style="white-space: nowrap;">docker image</span>都會push到內部Docker庫準備deploy</p>
                 </section>
                 <section>
                     <h4>
@@ -481,13 +498,31 @@ networks:
                     <p style="text-align: left;">
                         運營時期：
                         <ol style="font-size: 80%">
-                            <li class="fragment fade-up" data-fragment-index="10">
-
+                            <li class="fragment fade-up" data-fragment-index="1">
+                                運營環境的Linux伺服器上有設定環境變數，對應docker image正確配置的版本號tag。
                             </li>
-                            <li class="fragment fade-up" data-fragment-index="12">
-
+                            <li class="fragment fade-up" data-fragment-index="2">
+                                營運人員由docker-compose.yml檔執行<code>docker-compose pull</code>把對應tag版本的docker image下載到伺服器上。
+                            </li>
+                            <li class="fragment fade-up" data-fragment-index="3">
+                                執行<code>docker-compose up</code>，啟動服務。
                             </li>
                         </ol>
+                    </p>
+                    <hr class="fragment fade-up" data-fragment-index="5" />
+                    <p style="font-size:75%">
+                        <ul style="font-size: 80%" class="fa fa-ul">
+                            <li class="fa fragment fade-up" data-fragment-index="6">
+                                <i class="fa fa-li fa-check-square"></i>要進版/退版:修改環境變數<code>docker-compose pull</code>抓取對應版本啟動服務應用。
+                            </li>
+                            <li class="fa fragment fade-up" data-fragment-index="7">
+                                <i class="fa fa-li fa-check-square"></i>實際使用時配合寫好的shell script執行，在script內預先備份/建立好啟動時需要的docker
+                                volume。
+                            </li>
+                            <li class="fa fragment fade-up" data-fragment-index="8">
+                                <i class="fa fa-li fa-check-square"></i>甚至容器執行需要的設定檔、docker-compose的yml檔都是塞進一個專用docker image，運營人員pull該image並執行某個指令取出那些設定檔使用。
+                            </li>
+                        </ul>
                     </p>
                 </section>
                 <section>
