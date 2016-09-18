@@ -632,7 +632,7 @@ networks:
                         <li class="fa">
                             <span class="fragment fade-up" data-fragment-index="2">
                                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                            容器內的程式假如寫入到volume mapping對應的主機檔案，權限都亂掉了~</span>
+                            容器內的程式假如寫入到volume mapping對應的主機檔案，原本的檔案權限都亂掉了~</span>
                         </li>
                     </ul>
                     <hr class="fragment fade-up" data-fragment-index="3" />
@@ -702,6 +702,35 @@ networks:
                         <hr class="fragment fade-up" data-fragment-index="3" />
                         <p class="fragment fade-up" data-fragment-index="3">當然更好的解法是程式改寫成使用外部其他服務</p>
                     </div>
+                </section>
+                <section>
+                    <h4>根本不是code的罪<small class="fragment fade-up" data-fragment-index="7">
+                        <span class="fragment highlight-green" data-fragment-index="7">&nbsp;(Environment)</span></small>
+                    </h4>
+                    <ol>
+                        <li class="fragment fade-up" data-fragment-index="1">Docker storage bug:
+                            <ul>
+                                <li class="fragment fade-up" data-fragment-index="2">
+                                    Python pip install get failed on overlayfs:<br/>
+                                    <a href="http://github.com/pypa/pip/issues/2953" target="_blank">http://github.com/pypa/pip/issues/2953</a>
+                                    <a href="http://github.com/docker/docker/issues/12327" target="_blank">http://github.com/docker/docker/issues/12327</a>
+                                </li>
+                                <li class="fragment fade-up" data-fragment-index="3">
+                                    The same problem when using <code>tar</code> command:<br/>
+                                    <a href="http://github.com/docker/docker/issues/19647" target="_blank">http://github.com/docker/docker/issues/19647</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="fragment fade-up" data-fragment-index="4">Hosting environment bug:
+                            <ul>
+                                <li class="fragment fade-up" data-fragment-index="5">
+                                    <a href="https://github.com/docker-library/docs/tree/master/mongo#where-to-store-data" target="_blank">MongoDB  data directory on VirtualBox will lost when  container restart</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <hr class="fragment fade-up" data-fragment-index="6" />
+                    <p class="fragment fade-up" data-fragment-index="6">使用的工具&環境等複合因素造成的地雷還真不少......</p>
                 </section>
             </section>
             <section>
