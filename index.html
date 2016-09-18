@@ -580,60 +580,106 @@ networks:
                     <h4>設裡面設外面<small class="fragment fade-up" data-fragment-index="5">
                         <span class="fragment highlight-green" data-fragment-index="5">&nbsp;(Isolation)</span></small></h4>
                     <div style="text-align: left;">
-                        <ol class="fa">
-                            <li>
+                        <ul class="fa">
+                            <li class="fa">
                                 <ul class="fa fa-ul">
                                     <li class="fa">
-                                        Redis Linux kernel overcommit memory setting:<br/>
+                                        <i class="fa fa-li fa-question" aria-hidden="true"></i> Redis Linux kernel overcommit
+                                        memory setting:<br/>
                                         <small>
-                                <a href="http://redis.io/topics/admin" target="_blank">Add vm.overcommit_memory = 1 to /etc/sysctl.conf and then reboot or run the command <code>sysctl vm.overcommit_memory=1</code></a>
+                                            <a href="http://redis.io/topics/admin" target="_blank">Add vm.overcommit_memory = 1 to /etc/sysctl.conf and then reboot or run the command <code>sysctl vm.overcommit_memory=1</code></a>
                                         </small>
                                     </li>
-                                     <li class="fa">
-                                        設在容器<span class="fragment fade-up" data-fragment-index="1">『<strong>外面</strong>』跑docker-engine的Host環境</span>
+                                    <li class="fa">
+                                        <i class="fa fa-li fa-arrow-circle-right" aria-hidden="true"></i> 設在容器
+                                        <span class="fragment fade-up" data-fragment-index="1">『<strong>外面</strong>』跑docker-engine的Host環境</span>
                                     </li>
                                 </ul>
                             </li>
-                            <br/>
-                            <li>
+                            <div><br/></div>
+                            <li class="fa">
                                 <ul class="fa fa-ul">
                                     <li class="fa">
-                                        Set <code>/etc/hosts</code> map dns name to IP:<br/><small>
+                                        <i class="fa fa-li fa-question" aria-hidden="true"></i> Set <code>/etc/hosts</code>                                        map dns name to IP:<br/><small>
                                             <a href="http://community.linuxmint.com/tutorial/view/159" target="_blank">http://community.linuxmint.com/tutorial/view/159</a></small>
                                     </li>
                                     <li class="fa">
-                                        設在容器<span class="fragment fade-up" data-fragment-index="2">『<strong>裡面</strong>』的/etc/hosts檔</span>
+                                        <i class="fa fa-li fa-arrow-circle-right" aria-hidden="true"></i> 設在容器
+                                        <span class="fragment fade-up" data-fragment-index="2">『<strong>裡面</strong>』的/etc/hosts檔</span>
                                     </li>
                                 </ul>
                             </li>
-                        </ol>
+                        </ul>
                         <hr class="fragment fade-up" data-fragment-index="3" />
-                        <span class="fragment fade-up" data-fragment-index="3">設定是給應用程式本身讀的？<br/>還是設定給執行環境(OS)讀的？<br/>容器化的隔離技術到底是怎麼實現的？？<small class="fragment fade-up" data-fragment-index="4"><bold>(該K的底層功課逃不了)</bold></small></span>
+                        <span class="fragment fade-up" data-fragment-index="3"><i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+設定是應用程式本身的？<br/>
+<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+設定給執行環境(OS)的？<br/>
+<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+容器化的隔離技術是怎麼實現的？？<small class="fragment fade-up" data-fragment-index="4"><bold>(該K的底層功課逃不了)</bold></small></span>
                     </div>
                 </section>
                 <section>
                     <h4>過個水變權
                         <del>(貴)</del>限<small class="fragment fade-up" data-fragment-index="5">
                             <span class="fragment highlight-green" data-fragment-index="5">&nbsp;(Boundary)</span></small></h4>
-                    <ul class="fa">
-                        <li class="fa"><span class="fragment fade-up" data-fragment-index="1">
-                            docker預設跑在容器內的帳戶權限是容器內的<strong>【Root】</strong>!</span>
+                    <ul class="fa fa-ul">
+                        <li class="fa"><span class="fragment fade-up" data-fragment-index="1" style="white-space: nowrap">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            Docker預設跑在容器內的使用者權限是<strong>【Root】</strong>!</span>
                         </li>
+                        <br/>
                         <li class="fa">
                             <span class="fragment fade-up" data-fragment-index="2">
-                            容器內的程式假如修改volume mapping對應到的主機檔案，權限都亂掉了~</span>
+                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                            容器內的程式假如寫入到volume mapping對應的主機檔案，權限都亂掉了~</span>
                         </li>
                     </ul>
                     <hr class="fragment fade-up" data-fragment-index="3" />
                     <p style="font-size: 75%;text-align: left;" class="fragment fade-up" data-fragment-index="3">
                         <ul class="fragment fade-up" data-fragment-index="3">
-                            <li><span style="font-weight: bold">Workaround</span>：手動在啟動容器時額外塞外部的$UID、$GID環境變數，然後容器內最後要多做<br/>
-                                <code style="font-size: 75%">chown -R ${UID}:${GID}</code><br/>把權限橋回來。</span>
+                            <li><span style="font-weight: bold">Workaround</span>：手動在啟動容器時額外塞外部的$UID、$GID環境變數，然後容器內最後要多做指令：<br/>
+                                <code style="font-size: 75%">chown -R ${UID}:${GID}</code><br/>把權限<span style="font-style: italic">橋</span>回來。</span>
                             </li>
-                            <li><span style="font-weight: bold">正解</span>：資安角度強烈建議運營環境的docker容器內不要用預設執行權限!<br/>用v1.10之後的<a href="http://success.docker.com/Datacenter/Apply/Introduction_to_User_Namespaces_in_Docker_Engine"
-                                    target="_blank">User Namespace mapping功能</a>。</li>
+                            <li><span style="font-weight: bold">正解</span>：資安角度強烈建議運營環境的docker容器內不要用預設執行權限!<br/>使用v1.10之後的<a href="http://success.docker.com/Datacenter/Apply/Introduction_to_User_Namespaces_in_Docker_Engine"
+                                    target="_blank">User Namespace mapping</a>功能。</li>
                         </ul>
                     </p>
+                </section>
+                <section>
+                    <h4>網路卡無極限<small class="fragment fade-up" data-fragment-index="5"><span class="fragment highlight-green" data-fragment-index="5">&nbsp;(Networking)</span></small>
+                    </h4>
+                    <div style="text-align: left;">
+                        <ul class="fa fa-ul">
+                            <li class="fa">
+                                <ul class="fa fa-ul">
+                                    <li class="fa"><span class="fragment fade-up" data-fragment-index="1">
+                                        <i class="fa fa-li fa-info-circle" aria-hidden="true"></i>
+                            Docker容器最簡單可供外界存取服務的配置方式：<br/>透過<span style="white-space: nowrap">port mapping</span>對應到Host主機特定埠上</span>
+                                    </li>
+                                    <li class="fa">
+                                        <span class="fragment fade-up" data-fragment-index="2">
+                                <i class="fa fa-li fa-exclamation-circle" aria-hidden="true"></i>
+                            某些較早Linux Kernel版本(Ubuntu 12.04)且安裝多張網卡的環境，非預設路由網卡進來的連線會無法存取對應容器mapping port的服務。</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <div><br/></div>
+                            <ul class="fa fa-ul">
+                                <li class="fa">
+                                    <span class="fragment fade-up" data-fragment-index="3">
+                                <i class="fa fa-li fa-exclamation-circle" aria-hidden="true"></i>
+                                容器內應用服務listening [address:port]的設定寫成IPv6格式，在安裝太古早網卡硬體的hosting環境下服務會無法正常啟動。</span>
+                                </li>
+                            </ul>
+                        </ul>
+
+                        <hr class="fragment fade-up" data-fragment-index="4" />
+                        <span class="fragment fade-up" data-fragment-index="4">
+                            &nbsp;&nbsp;<i class="fa fa-angle-double-right"></i>
+                            <i class="fa fa-angle-double-right"></i>
+                            無解，人品不好就不要用太舊的軟硬體跑Docker&#x1f635;</span>
+                    </div>
                 </section>
             </section>
             <section>
@@ -651,8 +697,12 @@ networks:
         <script>
 		// Required, even if empty.
 		Reveal.initialize({
-             // Enable slide navigation via mouse wheel
+            // Enable slide navigation via mouse wheel
             mouseWheel: false,
+            // Push each slide change to the browser history
+            history: true,
+            // Display the page number of the current slide
+            slideNumber: true,
             // Hides the address bar on mobile devices
             hideAddressBar: true,
             slideNumber: 'c/t',
