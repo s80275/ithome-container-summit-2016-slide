@@ -533,7 +533,7 @@ networks:
                                 data-fragment-index="6">app要跟著轉變，時間會說明一切</span>
                             <small class="fragment fade-up" data-fragment-index="8">
                                 <span class="fragment highlight-green" data-fragment-index="8">
-                                    &nbsp;(micro-service)
+                                    &nbsp;(Microservice)
                                     </span></small>
                         </div>
                         <div style="text-align: left; padding: 5px">
@@ -541,14 +541,16 @@ networks:
                                 data-fragment-index="1">設裡面設外面</span>
                             <small class="fragment fade-up" data-fragment-index="8">
                                 <span class="fragment highlight-green" data-fragment-index="8">
-                                    (boundary)</span></small>
+                                 &nbsp;(Isolation)
+                                 </span></small>
                         </div>
                         <div style="text-align: left; padding: 5px">
                             <label class="fragment fade-up " data-fragment-index="7 ">2.&nbsp;</label><span class="fragment fade-up "
                                 data-fragment-index="2">過個水變權<del>(貴)</del>限</span>
                             <small class="fragment fade-up" data-fragment-index="8">
                                 <span class="fragment highlight-green" data-fragment-index="8">
-                                &nbsp;(isolation)</span></small>
+                                    &nbsp;(Boundary)
+                                </span></small>
                         </div>
                         <div style="text-align: left; padding: 5px">
                             <label class="fragment fade-up " data-fragment-index="7 ">3.&nbsp;</label><span class="fragment fade-up "
@@ -575,22 +577,10 @@ networks:
                     <h4 class="fragment fade-up " data-fragment-index="9">其他無法歸類的坑也很多......</h4>
                 </section>
                 <section>
-                    <h4>設裡面設外面<small class="fragment fade-up" data-fragment-index="5"><span class="fragment highlight-green" data-fragment-index="5">&nbsp;
-                        (boundary)</span></small></h4>
+                    <h4>設裡面設外面<small class="fragment fade-up" data-fragment-index="5">
+                        <span class="fragment highlight-green" data-fragment-index="5">&nbsp;(Isolation)</span></small></h4>
                     <div style="text-align: left;">
                         <ol class="fa">
-                            <li>
-                                <ul class="fa fa-ul">
-                                    <li class="fa">
-                                        Set <code>/etc/hosts</code> map dns name to IP:<br/><small>
-                                            <a href="http://community.linuxmint.com/tutorial/view/159" target="_blank">http://community.linuxmint.com/tutorial/view/159</a></small>
-                                    </li>
-                                    <li class="fa">
-                                        設在容器<span class="fragment fade-up" data-fragment-index="1">『<strong>裡面</strong>』的/etc/hosts檔</span>
-                                    </li>
-                                </ul>
-                            </li>
-                            <br/>
                             <li>
                                 <ul class="fa fa-ul">
                                     <li class="fa">
@@ -599,8 +589,20 @@ networks:
                                 <a href="http://redis.io/topics/admin" target="_blank">Add vm.overcommit_memory = 1 to /etc/sysctl.conf and then reboot or run the command <code>sysctl vm.overcommit_memory=1</code></a>
                                         </small>
                                     </li>
+                                     <li class="fa">
+                                        設在容器<span class="fragment fade-up" data-fragment-index="1">『<strong>外面</strong>』跑docker-engine的Host環境</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <br/>
+                            <li>
+                                <ul class="fa fa-ul">
                                     <li class="fa">
-                                        設在容器<span class="fragment fade-up" data-fragment-index="2">『<strong>外面</strong>』跑docker-engine的Host環境</span>
+                                        Set <code>/etc/hosts</code> map dns name to IP:<br/><small>
+                                            <a href="http://community.linuxmint.com/tutorial/view/159" target="_blank">http://community.linuxmint.com/tutorial/view/159</a></small>
+                                    </li>
+                                    <li class="fa">
+                                        設在容器<span class="fragment fade-up" data-fragment-index="2">『<strong>裡面</strong>』的/etc/hosts檔</span>
                                     </li>
                                 </ul>
                             </li>
@@ -611,8 +613,8 @@ networks:
                 </section>
                 <section>
                     <h4>過個水變權
-                        <del>(貴)</del>限<small class="fragment fade-up" data-fragment-index="5"><span class="fragment highlight-green" data-fragment-index="5">&nbsp;
-                         &nbsp;(isolation)</span></small></h4>
+                        <del>(貴)</del>限<small class="fragment fade-up" data-fragment-index="5">
+                            <span class="fragment highlight-green" data-fragment-index="5">&nbsp;(Boundary)</span></small></h4>
                     <ul class="fa">
                         <li class="fa"><span class="fragment fade-up" data-fragment-index="1">
                             docker預設跑在容器內的帳戶權限是容器內的<strong>【Root】</strong>!</span>
@@ -626,8 +628,7 @@ networks:
                     <p style="font-size: 75%;text-align: left;" class="fragment fade-up" data-fragment-index="3">
                         <ul class="fragment fade-up" data-fragment-index="3">
                             <li><span style="font-weight: bold">Workaround</span>：手動在啟動容器時額外塞外部的$UID、$GID環境變數，然後容器內最後要多做<br/>
-                                <code
-                                    style="font-size: 75%">chown -R ${UID}:${GID}</code><br/>把權限橋回來。</span>
+                                <code style="font-size: 75%">chown -R ${UID}:${GID}</code><br/>把權限橋回來。</span>
                             </li>
                             <li><span style="font-weight: bold">正解</span>：資安角度強烈建議運營環境的docker容器內不要用預設執行權限!<br/>用v1.10之後的<a href="http://success.docker.com/Datacenter/Apply/Introduction_to_User_Namespaces_in_Docker_Engine"
                                     target="_blank">User Namespace mapping功能</a>。</li>
