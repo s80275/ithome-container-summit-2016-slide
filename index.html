@@ -424,7 +424,8 @@ networks:
                                 OS image寫<a href="http://docs.docker.com/engine/reference/builder/" target="_blank">Dockerfile</a>自建。
                             </li>
                             <li class="fragment fade-up" data-fragment-index="2">
-                                撰寫Dockerfile及<a href="http://docs.docker.com/compose/compose-file/" target="_blank">docker-compose.yml</a>，建出配合舊有應用程式所需的image，設定檔的部分也先用volume mapping的方式餵進去。
+                                撰寫Dockerfile及<a href="http://docs.docker.com/compose/compose-file/" target="_blank">docker-compose.yml</a>，建出配合舊有應用程式所需的image，設定檔的部分也先用volume
+                                mapping的方式餵進去。
                             </li>
                             <li class="fragment fade-up" data-fragment-index="3">
                                 使用volume mapping的方式將原本建置流程產生的執行檔直接餵進去讓docker容器使用，進行開發測試。<br/>
@@ -809,6 +810,15 @@ networks:
             </section>
             <section>
                 <h2>結論</h2>
+                <div style="text-align: left;">投影片
+                    <ul class="fa fa-ul">
+                        <li class="fa"><i class="fa fa-li fa-cloud" aria-hidden="true"></i>網址：</li>
+                        <li class="fa"><i class="fa fa-li fa-github" aria-hidden="true"></i>原始碼(MIT授權)：<br/>
+                        <a href="http://github.com/windperson/ithome-container-summit-2016-slide" target="_blank">
+                        http://github.com/windperson/ithome-container-summit-2016-slide</a></li>
+                    </ul>
+
+                </div>
             </section>
             <section>
                 <section>
@@ -867,6 +877,11 @@ docker volume rm $(docker volume ls -q)
 docker rmi $(docker images -q -f=dangling=true)
                         </code>
                     </pre>
+                </section>
+                <section>
+                    <h3>redis容器的設定demo</h3>
+                    <iframe class="stretch" data-src="./redis_config.html"></iframe>
+                    <small>會發現居然kernel設定是要設在跑docker-engine的Host上，redis有個啟動紀錄的warning才會消失<br/>&#x1f631;</small>
                 </section>
             </section>
             </div>
