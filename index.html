@@ -224,14 +224,15 @@
                                         <span/>
                                         <span class="fragment fade-up" data-fragment-index="4"><strong class="fragment highlight-green" data-fragment-index="2">Fixed Image</strong>
                                         <small>(build time)</small></span></li>
-                                <li class="fragment fade-up" data-fragment-index="5">Union File System分層構造<br/>
+                                <li class="fragment fade-up" data-fragment-index="5"><strong>Union File System</strong>分層構造<br/>
                                     <span class="fragment fade-up" data-fragment-index="6">
                                         <small>(for static data & code or exe)</small></span></li>
-                                <li class="fragment fade-up" data-fragment-index="7"><a href="https://docs.docker.com/engine/tutorials/dockervolumes/" target="_blank">Volume</a>                                    for state data<br/>
+                                <li class="fragment fade-up" data-fragment-index="7"><strong><a href="https://docs.docker.com/engine/tutorials/dockervolumes/" target="_blank">Volume</a></strong>&nbsp;for
+                                    state data<br/>
                                     <ul style="font-size: 80%">
                                         <li class="fragment fade-up" data-fragment-index="8">多個容器可以共享單一volume</li>
-                                        <li class="fragment fade-up" data-fragment-index="9">容器的volume可以對應到實體機器FS位置</li>
-                                        <li class="fragment fade-up" data-fragment-index="10">image產生時可以定義內部路徑位置的volme，並由另一個容器啟動時使用
+                                        <li class="fragment fade-up" data-fragment-index="9">容器volume可以對應到實體機器FS位置</li>
+                                        <li class="fragment fade-up" data-fragment-index="10">image產生時可以定義內部路徑位置的volume，並由另一個容器啟動時使用
                                             <br/>(<a href="http://docs.docker.com/engine/reference/run/#/volume-shared-filesystems"
                                                 target="_blank">--volumes-from</a>)</li>
                                     </ul>
@@ -419,10 +420,11 @@ networks:
                         開發時期:
                         <ol style="font-size: 80%">
                             <li class="fragment fade-up" data-fragment-index="1">
-                                根據docker hub上提供的官方image切分服務，不夠的再自行根據Base OS image寫dockerfile自建。
+                                根據<a href="http://docs.docker.com/docker-hub/official_repos/" target="_blank">docker hub上提供的官方image</a>切分服務，不夠的再自行根據Base
+                                OS image寫<a href="http://docs.docker.com/engine/reference/builder/" target="_blank">Dockerfile</a>自建。
                             </li>
                             <li class="fragment fade-up" data-fragment-index="2">
-                                撰寫dockerfile及docker-compose.yml，建出配合舊有應用程式所需的image，設定檔的部分也先用volume mapping的方式餵進去。
+                                撰寫Dockerfile及<a href="http://docs.docker.com/compose/compose-file/" target="_blank">docker-compose.yml</a>，建出配合舊有應用程式所需的image，設定檔的部分也先用volume mapping的方式餵進去。
                             </li>
                             <li class="fragment fade-up" data-fragment-index="3">
                                 使用volume mapping的方式將原本建置流程產生的執行檔直接餵進去讓docker容器使用，進行開發測試。<br/>
@@ -438,7 +440,7 @@ networks:
                                     </li>
                                     <li class="fa fragment fade-up" data-fragment-index="7"><i class="fa fa-li fa-check-square"></i>
                                         <span>
-                                        採用『<a href="https://docs.docker.com/engine/tutorials/dockervolumes/#/creating-and-mounting-a-data-volume-container" target="_blank">data volume container</a>』的方式把<code>設定檔</code>(不含Game Table資料)封裝產生docker image。
+                                        採用『<a href="https://docs.docker.com/engine/tutorials/dockervolumes/#/creating-and-mounting-a-data-volume-container" target="_blank">data volume container</a>』的方式把<code>設定檔</code><br/>(不含Game&nbsp;Table資料)封裝產生docker image。
                                         </span>
                                     </li>
                                     <li class="fa fragment fade-up" data-fragment-index="8"><i class="fa fa-li fa-check-square"></i>
