@@ -169,26 +169,28 @@
             <section>
                 <section>
                     <h2>Docker<br/>(docker-engine)<br/>是什麼</h2>
-                    <ul>
-                        <li class="fragment fade-up" data-fragment-index="1">
-                            <div style="white-space: nowrap;">Light Weight VM?</div>
-                            <div style="font-size:80%" class="fragment fade-up" data-fragment-index="2">
-                                <a href="http://blog.docker.com/2016/03/containers-are-not-vms/" target="_blank" style="z-index: 5;">Containers are not VMs</a></div>
-                        </li>
-                        <li class="fragment fade-up" data-fragment-index="3">
-                            <div style="white-space: nowrap;">Runtime?</div>
-                        </li>
-                        <li class="fragment fade-up" data-fragment-index="4">
-                            <div style="white-space: nowrap;">Sandbox?</div>
-                        </li>
-                        <li class="fragment fade-up" data-fragment-index="5">
-                            <div style="white-space: nowrap;">Transport Package Format?</div>
-                        </li>
-                    </ul>
+                    <div>
+                        <ul>
+                            <li class="fragment fade-up" data-fragment-index="1">
+                                <span style="white-space: nowrap;">Light Weight VM<i class="fa fa-question" aria-hidden="true"></span></i><br/>
+                                <span style="font-size:80%" class="fragment fade-up" data-fragment-index="2">
+                                <a href="http://blog.docker.com/2016/03/containers-are-not-vms/" target="_blank">Containers&nbsp;are&nbsp;not&nbsp;VMs</a></span>
+                            </li>
+                            <li class="fragment fade-up" data-fragment-index="3">
+                                <span style="white-space: nowrap;">Runtime<i class="fa fa-question" aria-hidden="true"></i></span>
+                            </li>
+                            <li class="fragment fade-up" data-fragment-index="4">
+                                <span style="white-space: nowrap;">Sandbox<i class="fa fa-question" aria-hidden="true"></i></span>
+                            </li>
+                            <li class="fragment fade-up" data-fragment-index="5">
+                                <span style="white-space: nowrap;">Transport Package Format<i class="fa fa-question" aria-hidden="true"></i></span>
+                            </li>
+                        </ul>
+                    </div>
                     <div style="display: block; position: absolute; top: 0px; left: 0px; width:100%; height: 100%;pointer-events: none;" class="fragment fade-up"
                         data-fragment-index="6">
                         <div style="pointer-events: none;" class="fragment fade-out" data-fragment-index="7">
-                            <img style="width: 100%;height: 100%;pointer-events: none;" data-src="./pic/ElephantBlindmen.png" />
+                            <img class="stretch" style="width: 100%;height: 100%;pointer-events: none;" data-src="./pic/ElephantBlindmen.png" />
                         </div>
                     </div>
                 </section>
@@ -209,18 +211,18 @@
                 </section>
                 <section>
                     <h3>幾個概念</h3>
-                    <div style="display: table; width:100%; overflow:hidden;">
-                        <div style="display: table-cell; vertical-align: middle;">
-                            <img style="display: block; margin: 0px;" data-src="./pic/engine-components-flow.png" /><br/>
+                    <div style="display: table; table-layout: fixed; width:100%; overflow:hidden;">
+                        <div style="display: table-cell; width: 40%;vertical-align: middle;">
+                            <img style="display: block; margin: 0px;" data-src="./pic/engine-components-flow.png" data-action="zoom" /><br/>
                             <small>來源：<a href="https://docs.docker.com/engine/understanding-docker/#/what-is-docker-engine" target="_blank">官網docker-engine</a></small>
                         </div>
                         <div style="display: table-cell; margin-left: 20px; vertical-align: middle; float:right">
                             <ol>
                                 <li class="fragment fade-up" data-fragment-index="1">client-server架構</li>
-                                <li class="fragment fade-up" data-fragment-index="2">Running Container<small>(run time)</small><br/>
-                                    <span class="fragment fade-up" data-fragment-index="3"><small>v.s.</small>
-                                        <span/><br/>
-                                        <span class="fragment fade-up" data-fragment-index="4">Fixed Image
+                                <li class="fragment fade-up" data-fragment-index="2"><strong class="fragment highlight-green" data-fragment-index="2">Running Container</strong><small>&nbsp;(run time)</small><br/>
+                                    <span class="fragment fade-up" data-fragment-index="3"><small>v.s.&nbsp;</small>
+                                        <span/>
+                                        <span class="fragment fade-up" data-fragment-index="4"><strong class="fragment highlight-green" data-fragment-index="2">Fixed Image</strong>
                                         <small>(build time)</small></span></li>
                                 <li class="fragment fade-up" data-fragment-index="5">Union File System分層構造<br/>
                                     <span class="fragment fade-up" data-fragment-index="6">
@@ -748,7 +750,7 @@ networks:
                     <div style="text-align: left; font-size: 90%">
                         <ul class="fa">
                             <li class="fa fragment fade-up" data-fragment-index="1">
-                                <i class="fa fa-li fa-level-up" aria-hidden="true"></i><strong>共通功能統一標準化</strong>：<br/>Process
+                                <i class="fa fa-li fa-level-up" aria-hidden="true"></i><strong>共通功能統一標準化</strong><br/>Process
                                 Manager&nbsp;+&nbsp;
                                 <code><a href="" target="_blank">tail</a></code>指令的workaround轉為使用
                                 <a href="http://docs.docker.com/engine/admin/logging/etwlogs/" target="_blank">ETW</a>、
@@ -771,10 +773,10 @@ networks:
                                 </span>
                                 </span>
                             </li>
-                            <div style="font-size: 25%;">&nbsp;</div>
+                            <div style="font-size: 30%;">&nbsp;</div>
                             <li class="fa fragment fade-up" data-fragment-index="3">
                                 <i class="fa fa-li fa-level-up" aria-hidden="true"></i><strong class="fragement highlight-green"
-                                    data-fragment-index="3">微服務化<small style="font-family: Sans-serif"><a href="http://blog.codeship.com/monolithic-core-vs-fully-microservice-architecture/" target="_blank">(Microservice architecture with a monolithic core)</small></a></strong>：<br/>
+                                    data-fragment-index="3">微服務化<small style="font-size: 80%;font-family: Sans-serif"><a href="http://blog.codeship.com/monolithic-core-vs-fully-microservice-architecture/" target="_blank">(Microservice architecture with a monolithic core)</small></a></strong><br/>
                                 <span class="fragment fade-up" data-fragment-index="4">
                                     <ul class="fa fa-ul">
                                         <li class="fa">
@@ -803,6 +805,68 @@ networks:
                     </h2>
                 </section>
             </section>
+            <section>
+                <h2>結論</h2>
+            </section>
+            <section>
+                <section>
+                    <h2>參考資料</h2>
+                </section>
+                <section>
+                    <h3>常用docker&nbsp;&&nbsp;docker-compose指令</h3>
+                    <pre>
+                        <code class="hljs">
+#List all container(running or not running):
+docker ps -a
+
+#Run container(it will download image -> create container -> run it):
+docker run image_name [command to run in container]
+
+#Start a  stopped state container:
+docker start [container_ID|container_Name]
+
+#Check container detail information(include virtual IP address):
+docker inspect [container_ID|container_Name]
+
+#Get container's IP address:
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [container_ID|container_Name]
+
+#See container's information filter by certain "JSON node":
+docker inspect --format='{{json .[JSON_node_name]}}' [container_ID|container_Name]
+
+#Console into running container:
+docker exec -it [container_ID|container_Name] bash
+
+#When using docker-compose, this is create new container and run with command:
+docker-compose [-f the_yml_file] run yml_defined_service_name bash
+
+#See container's running log:
+docker logs [container_ID|container_Name]
+
+#Save container version:
+docker commit [container_ID|container_Name] The_name_you_want
+
+#Stop running container:
+docker stop
+
+#Show current docker daemon's images:
+docker images
+
+#Remove all containers:
+docker rm -f $(docker ps -aq)
+
+#Remove all images currently in host:
+docker rmi -f $(docker images -aq)
+
+#Remove all volumes in current host:
+docker volume rm $(docker volume ls -q)
+
+#Remove all untagged images (images has &lt;none&gt; in REPOSITORY field as example):
+docker rmi $(docker images -q -f=dangling=true)
+                        </code>
+                    </pre>
+                </section>
+            </section>
             </div>
         </div>
         <script src="lib/js/head.min.js "></script>
@@ -821,11 +885,14 @@ networks:
             hideAddressBar: true,
             slideNumber: 'c/t',
             dependencies: [
-                { src: 'plugin/chalkboard/chalkboard.js' },
+                { src: 'plugin/chalkboard/chalkboard.js', async: true },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
                 { src: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js', 
                 async: true, callback: function() { 
                     hljs.initHighlightingOnLoad(); 
-                }}],
+                }}
+            ],
+                
             chalkboard: {
                 src: './annotation.json',
                 readOnly: undefined,
@@ -839,7 +906,7 @@ networks:
                 // 68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
                 45: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when '-' is pressed
                 46: function() { RevealChalkboard.clear() }    // clear chalkboard when 'DEL' is pressed
-    },
+            }
 		});
 
         if( window.location.search.match( /print-pdf/gi ) ) {
