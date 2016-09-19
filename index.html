@@ -576,7 +576,7 @@ networks:
                 </section>
                 <section>
                     <h4>設裡面設外面<small class="fragment fade-up" data-fragment-index="5">
-                        <span class="fragment highlight-green" data-fragment-index="5">&nbsp;(Isolation)</span></small></h4>
+                        <span style="font-family: Sans-serif;font-size: 100%;text-transform: uppercase;" class="fragment highlight-green" data-fragment-index="5">&nbsp;(Isolation)</span></small></h4>
                     <div style="text-align: left;">
                         <ul class="fa">
                             <li class="fa">
@@ -614,13 +614,13 @@ networks:
 <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
 設定給執行環境(OS)的？<br/>
 <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-容器化的隔離技術是怎麼實現的？？<small class="fragment fade-up" data-fragment-index="4"><bold>(該K的底層功課逃不了)</bold></small></span>
+容器化的隔離技術是怎麼實現的？？<small style="font-family: Sans-serif;font-size: 80%" class="fragment fade-up" data-fragment-index="4"><bold>(該K的底層功課逃不了)</bold></small></span>
                     </div>
                 </section>
                 <section>
                     <h4>過個水變權
                         <del>(貴)</del>限<small class="fragment fade-up" data-fragment-index="5">
-                            <span class="fragment highlight-green" data-fragment-index="5">&nbsp;(Boundary)</span></small></h4>
+                            <span style="font-family: Sans-serif;font-size: 100%;text-transform: uppercase;" class="fragment highlight-green" data-fragment-index="5">&nbsp;(Boundary)</span></small></h4>
                     <ul class="fa fa-ul">
                         <li class="fa"><span class="fragment fade-up" data-fragment-index="1" style="white-space: nowrap">
                             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
@@ -635,17 +635,21 @@ networks:
                     </ul>
                     <hr class="fragment fade-up" data-fragment-index="3" />
                     <p style="font-size: 75%;text-align: left;" class="fragment fade-up" data-fragment-index="3">
-                        <ul class="fragment fade-up" data-fragment-index="3">
-                            <li><span style="font-weight: bold">Workaround</span>：手動在啟動容器時額外塞外部的$UID、$GID環境變數，然後容器內最後要多做指令：<br/>
-                                <code style="font-size: 75%">chown -R ${UID}:${GID}</code><br/>把權限<span style="font-style: italic">橋</span>回來。</span>
+                        <ul class="fa fa-ul fragment fade-up" data-fragment-index="3">
+                            <li class="fa"><i class="fa fa-li fa-circle-o-notch" aria-hidden="true"></i><span style="font-weight: bold">Workaround</span>：手動在啟動容器時額外塞外部的$UID、$GID環境變數，然後容器內最後要多做指令：<br/>
+                                <code style="font-size: 75%"><a href="http://www.cyberciti.biz/faq/how-to-use-chmod-and-chown-command/" target="_blank">chown -R ${UID}:${GID}</a></code><br/>把權限
+                                <span style="font-style: italic">橋</span>回來。</span>
                             </li>
-                            <li><span style="font-weight: bold">正解</span>：資安角度強烈建議運營環境的docker容器內不要用預設執行權限!<br/>使用v1.10之後的<a href="http://success.docker.com/Datacenter/Apply/Introduction_to_User_Namespaces_in_Docker_Engine"
-                                    target="_blank">User Namespace mapping</a>功能。</li>
+                            <div style="font-size: 50%">&nbsp;</div>
+                            <li class="fa"><i class="fa fa-li fa-check-circle" aria-hidden="true"></i>
+                                <span style="font-weight: bold">正解</span>：資安角度強烈建議運營環境的docker容器內不要用預設執行權限!<br/>使用v1.10之後的
+                                <a href="http://success.docker.com/Datacenter/Apply/Introduction_to_User_Namespaces_in_Docker_Engine" target="_blank">User Namespace mapping</a>功能。</li>
                         </ul>
                     </p>
                 </section>
                 <section>
-                    <h4>網路卡無極限<small class="fragment fade-up" data-fragment-index="5"><span class="fragment highlight-green" data-fragment-index="5">&nbsp;(Networking)</span></small>
+                    <h4>網路卡無極限<small class="fragment fade-up" data-fragment-index="5">
+                        <span style="font-family: Sans-serif;font-size: 100%;text-transform: uppercase;" class="fragment highlight-green" data-fragment-index="5">&nbsp;(Networking)</span></small>
                     </h4>
                     <div style="text-align: left;">
                         <ul class="fa fa-ul">
@@ -662,7 +666,7 @@ networks:
                                     </li>
                                 </ul>
                             </li>
-                            <div><br/></div>
+                            <div style="font-size: 50%">&nbsp;</div>
                             <ul class="fa fa-ul">
                                 <li class="fa">
                                     <span class="fragment fade-up" data-fragment-index="3">
@@ -681,11 +685,12 @@ networks:
                 </section>
                 <section>
                     <h4>Infra自幹有點累<small class="fragment fade-up" data-fragment-index="5">
-                        <span class="fragment highlight-green" data-fragment-index="5">&nbsp;(OS API/Service)</span></small>
+                        <span style="font-family: Sans-serif;font-size: 100%;text-transform: uppercase;" class="fragment highlight-green" data-fragment-index="5">&nbsp;(OS API/Service)</span></small>
                     </h4>
                     <div>
                         <p class="fragment fade-up" data-fragment-index="0">
-                            Docker容器內的應用需要用到原本倚賴的作業系統服務<br/>(例：Unix/Linux的<a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html" target="_blank">crontab</a>排程)<br/>怎麼辦？
+                            Docker容器內的應用需要用到原本倚賴的作業系統服務<br/>(例：Unix/Linux的<a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html"
+                                target="_blank">crontab</a>排程)<br/>怎麼辦？
                         </p>
                         <span class="fragment fade-up" data-fragment-index="1">自幹一個！&#x1f4aa;</span>
                         <ul class="fa fa-ul">
@@ -698,72 +703,91 @@ networks:
                             </li>
                         </ul>
                         <hr class="fragment fade-up" data-fragment-index="3" />
-                        <p class="fragment fade-up" data-fragment-index="3">當然更好的解法是程式改寫成使用外部其他服務</p>
+                        <p class="fragment fade-up" data-fragment-index="3"><i class="fa fa-check-circle" aria-hidden="true"></i>當然更好的解法是程式改寫成使用其他外部服務</p>
                     </div>
                 </section>
                 <section>
                     <h4>根本不是code的罪<small class="fragment fade-up" data-fragment-index="7">
-                        <span class="fragment highlight-green" data-fragment-index="7">&nbsp;(Environment)</span></small>
+                        <span style="font-family: Sans-serif;font-size: 100%;text-transform: uppercase;" class="fragment highlight-green" data-fragment-index="7">&nbsp;(Environment)</span></small>
                     </h4>
                     <ol>
                         <li class="fragment fade-up" data-fragment-index="1">Docker storage bug:
-                            <ul>
-                                <li class="fragment fade-up" data-fragment-index="2">
-                                    Python pip install get failed on overlayfs:<br/>
+                            <ul class="fa fa-ul">
+                                <li class="fa fragment fade-up" data-fragment-index="2">
+                                    <i class="fa fa-li fa-bug" aria-hidden="true"></i>Python pip install get failed on
+                                    <a style="font-family: Sans-serif;" href="http://docs.docker.com/engine/userguide/storagedriver/overlayfs-driver/" target="_blank">OverlayFS</a>:<br/>
                                     <a href="http://github.com/pypa/pip/issues/2953" target="_blank">http://github.com/pypa/pip/issues/2953</a>
                                     <a href="http://github.com/docker/docker/issues/12327" target="_blank">http://github.com/docker/docker/issues/12327</a>
                                 </li>
-                                <li class="fragment fade-up" data-fragment-index="3">
-                                    The same problem when using Linux "<code>tar</code>" command:<br/>
+                                <li class="fa fragment fade-up" data-fragment-index="3">
+                                    <i class="fa fa-li fa-bug" aria-hidden="true"></i>The same problem when using Linux "<code><a href="http://linuxcommand.org/man_pages/tar1.html" target="_blank">tar</a></code>"
+                                    command:
+                                    <br/>
                                     <a href="http://github.com/docker/docker/issues/19647" target="_blank">http://github.com/docker/docker/issues/19647</a>
                                 </li>
                             </ul>
                         </li>
+                        <div style="font-size: 30%;">&nbsp;</div>
                         <li class="fragment fade-up" data-fragment-index="4">Hosting environment bug:
-                            <ul>
-                                <li class="fragment fade-up" data-fragment-index="5">
+                            <ul class="fa fa-ul">
+                                <li class="fa fragment fade-up" data-fragment-index="5">
+                                    <i class="fa fa-li fa-bug" aria-hidden="true"></i>
                                     <a href="https://github.com/docker-library/docs/tree/master/mongo#where-to-store-data" target="_blank">MongoDB  data directory on VirtualBox will lost when  container restart</a>
                                 </li>
                             </ul>
                         </li>
                     </ol>
                     <hr class="fragment fade-up" data-fragment-index="6" />
-                    <p class="fragment fade-up" data-fragment-index="6">使用的工具&環境等複合因素造成的地雷還真不少......</p>
+                    <span style="white-space: nowrap;" class="fragment fade-up" data-fragment-index="6">
+                        <i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;使用的<strong><em>工具</em></strong>&nbsp;&&nbsp;<strong><em>環境</em></strong>&nbsp;&nbsp;複合因素造成的地雷還不少......</span>
                 </section>
                 <section>
-                    <h4>app要跟著轉變，時間會說明一切
-                        <small class="fragment fade-up" data-fragment-index="7">
-                        <span class="fragment highlight-green" data-fragment-index="7"> &nbsp;(Microservice)</span></small>
+                    <h4>app要跟著轉變，時間會說明一切<small class="fragment fade-up" data-fragment-index="7">
+                        <span style="font-family: Sans-serif;font-size: 100%;text-transform: uppercase;" class="fragment highlight-green" data-fragment-index="7">&nbsp;(Microservice)</span></small>
                     </h4>
                     <div style="text-align: left; font-size: 90%">
                         <ul class="fa">
                             <li class="fa fragment fade-up" data-fragment-index="1">
-                                <i class="fa fa-li fa-level-up" aria-hidden="true"></i><strong>共通功能統一標準化</strong>：<br/>PM2
-                                + tail指令的workaround轉為使用
+                                <i class="fa fa-li fa-level-up" aria-hidden="true"></i><strong>共通功能統一標準化</strong>：<br/>Process
+                                Manager&nbsp;+&nbsp;
+                                <code><a href="" target="_blank">tail</a></code>指令的workaround轉為使用
                                 <a href="http://docs.docker.com/engine/admin/logging/etwlogs/" target="_blank">ETW</a>、
                                 <a href="http://docs.docker.com/engine/admin/logging/fluentd/" target="_blank">Fluentd</a>、
                                 <a href="http://docs.docker.com/engine/admin/logging/journald" target="_blank">Journald</a>、
                                 <a href="http://docs.docker.com/engine/admin/logging/splunk/" target="_blank">Splunk</a>等以便簡化容器的Log處理。<br/>
                                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>可參考<a href="http://www.loggly.com/blog/top-5-docker-logging-methods-to-fit-your-container-deployment-strategy/"
                                     target="_blank">5 Docker Logging Methods</a>建議的5種配置。<br/>
-                                <span class="fragment highlight-red" data-fragment-index="2">
-                                <span class="fragment fade-up" data-fragment-index="2"><i class="fa fa-exclamation"></i><i class="fa fa-exclamation"></i><i class="fa fa-exclamation"></i>跑久了容器內的服務自己掛掉的bug最難找<i class="fa fa-exclamation"></i><i class="fa fa-exclamation"></i><i class="fa fa-exclamation"></i></span></span>
+                                <span class="fragment highlight-current-red" data-fragment-index="2">
+                                    <span class="fragment highlight-red" data-fragment-index="2">
+                                    <span class="fragment zoom-in" data-fragment-index="2">
+                                    <i class="fa fa-exclamation"></i>
+                                    <i class="fa fa-exclamation"></i>
+                                    <i class="fa fa-exclamation"></i>
+                                    容器內服務跑久了自己掛掉的bug最難找
+                                    <i class="fa fa-exclamation"></i>
+                                    <i class="fa fa-exclamation"></i>
+                                    <i class="fa fa-exclamation"></i>
+                                </span>
+                                </span>
+                                </span>
                             </li>
+                            <div style="font-size: 25%;">&nbsp;</div>
                             <li class="fa fragment fade-up" data-fragment-index="3">
-                                <i class="fa fa-li fa-level-up" aria-hidden="true"></i><strong>微服務化</strong>：<br/>
+                                <i class="fa fa-li fa-level-up" aria-hidden="true"></i><strong class="fragement highlight-green"
+                                    data-fragment-index="3">微服務化<small style="font-family: Sans-serif"><a href="http://blog.codeship.com/monolithic-core-vs-fully-microservice-architecture/" target="_blank">(Microservice architecture with a monolithic core)</small></a></strong>：<br/>
                                 <span class="fragment fade-up" data-fragment-index="4">
                                     <ul class="fa fa-ul">
                                         <li class="fa">
                                         <i class="fa fa-li fa-wrench" aria-hidden="true"></i>
-                                        善用Docker的Image Layer & <a href="http://medium.com/@ramangupta/why-docker-data-containers-are-good-589b3c6c749e#.1aonow36p" target="_blank">data volume container技巧</a>拆分<span style="white-space: no-wrap">原本monolithic架構</span>
+                                        用<a href="http://tuhrig.de/layering-of-docker-images/" target="_blank">Docker&nbsp;Image&nbsp;Layer</a>&nbsp;&&nbsp; 
+                                        <a href="http://medium.com/@ramangupta/why-docker-data-containers-are-good-589b3c6c749e#.1aonow36p" target="_blank">data&nbsp;volume&nbsp;container&nbsp;</a>的技巧拆分<span style="white-space: no-wrap">原本monolithic架構。</span>
                             </li>
                             <li class="fa fragment fade-up" data-fragment-index="5">
-                                <i class="fa fa-li fa-wrench" aria-hidden="true"></i> 為了讓自己包裝的應用服務Image有足夠彈性，使用指定容器啟動時呼叫shell
-                                script、根據啟動時的環境變數配合template動態產生設定檔，最後啟動服務的方式設計。
+                                <i class="fa fa-li fa-wrench" aria-hidden="true"></i> 為了讓包裝好的應用服務Image有足夠彈性，使用容器啟動時呼叫特定shell&nbsp;script，執行依環境變數配合範本引擎動態產生固定設定檔案的動作，最後再啟動服務的方式設計。
                             </li>
                             <li class="fa fragment fade-up" data-fragment-index="6">
-                                <i class="fa fa-li fa-wrench" aria-hidden="true"></i> 使用
-                                <a href="http://martinfowler.com/articles/injection.html" target="_blank">DI架構</a>的程式會較容易遷移至容器內&微服務化。
+                                <i class="fa fa-li fa-wrench" aria-hidden="true"></i>使用&nbsp;<a href="http://martinfowler.com/articles/injection.html"
+                                    target="_blank">DI架構</a>&nbsp;的程式會較容易遷移至容器內&微服務化。
                             </li>
                         </ul>
                         </span>
