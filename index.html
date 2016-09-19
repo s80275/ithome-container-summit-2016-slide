@@ -732,6 +732,47 @@ networks:
                     <hr class="fragment fade-up" data-fragment-index="6" />
                     <p class="fragment fade-up" data-fragment-index="6">使用的工具&環境等複合因素造成的地雷還真不少......</p>
                 </section>
+                <section>
+                    <h4>app要跟著轉變，時間會說明一切
+                        <small class="fragment fade-up" data-fragment-index="7">
+                        <span class="fragment highlight-green" data-fragment-index="7"> &nbsp;(Microservice)</span></small>
+                    </h4>
+                    <div style="text-align: left; font-size: 90%">
+                        <ul class="fa">
+                            <li class="fa fragment fade-up" data-fragment-index="1">
+                                <i class="fa fa-li fa-level-up" aria-hidden="true"></i><strong>共通功能統一標準化</strong>：<br/>PM2
+                                + tail指令的workaround轉為使用
+                                <a href="http://docs.docker.com/engine/admin/logging/etwlogs/" target="_blank">ETW</a>、
+                                <a href="http://docs.docker.com/engine/admin/logging/fluentd/" target="_blank">Fluentd</a>、
+                                <a href="http://docs.docker.com/engine/admin/logging/journald" target="_blank">Journald</a>、
+                                <a href="http://docs.docker.com/engine/admin/logging/splunk/" target="_blank">Splunk</a>等以便簡化容器的Log處理。<br/>
+                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>可參考<a href="http://www.loggly.com/blog/top-5-docker-logging-methods-to-fit-your-container-deployment-strategy/"
+                                    target="_blank">5 Docker Logging Methods</a>建議的5種配置。<br/>
+                                    <span class="fragment highlight-red" data-fragment-index="2">
+                                <span class="fragment fade-up" data-fragment-index="2"><i class="fa fa-exclamation"></i><i class="fa fa-exclamation"></i><i class="fa fa-exclamation"></i>跑久了容器內的服務自己掛掉的bug最難找<i class="fa fa-exclamation"></i><i class="fa fa-exclamation"></i><i class="fa fa-exclamation"></i></span></span>
+                            </li>
+                            <li class="fa fragment fade-up" data-fragment-index="3">
+                                <i class="fa fa-li fa-level-up" aria-hidden="true"></i><strong>微服務化</strong>：<br/>
+                                <span class="fragment fade-up" data-fragment-index="4">
+                                    <ul class="fa fa-ul">
+                                        <li class="fa">
+                                        <i class="fa fa-li fa-wrench" aria-hidden="true"></i>
+                                        善用Docker的Image Layer & <a href="http://medium.com/@ramangupta/why-docker-data-containers-are-good-589b3c6c749e#.1aonow36p" target="_blank">data volume container技巧</a>拆分<span style="white-space: no-wrap">原本monolithic架構</span>
+                            </li>
+                            <li class="fa fragment fade-up" data-fragment-index="5">
+                                <i class="fa fa-li fa-wrench" aria-hidden="true"></i> 為了讓自己包裝的應用服務Image有足夠彈性，使用指定容器啟動時呼叫shell
+                                script、根據啟動時的環境變數配合template動態產生設定檔，最後啟動服務的方式設計。
+                            </li>
+                            <li class="fa fragment fade-up" data-fragment-index="6">
+                                <i class="fa fa-li fa-wrench" aria-hidden="true"></i> 使用
+                                <a href="http://martinfowler.com/articles/injection.html" target="_blank">DI架構</a>的程式會較容易遷移至容器內&微服務化。
+                            </li>
+                        </ul>
+                        </span>
+                        </li>
+                        </ul>
+                    </div>
+                </section>
             </section>
             <section>
                 <section>
