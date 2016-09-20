@@ -190,7 +190,7 @@
                     <div style="display: block; position: absolute; top: 0px; left: 0px; width:100%; height: 100%;pointer-events: none;" class="fragment fade-up"
                         data-fragment-index="6">
                         <div style="pointer-events: none;" class="fragment fade-out" data-fragment-index="7">
-                            <img class="stretch" style="width: 100%;height: 100%;pointer-events: none;" data-src="./pic/ElephantBlindmen.png" />
+                            <img style="width: 100%;height: 100%;pointer-events: none;" data-src="./pic/ElephantBlindmen.png" />
                         </div>
                     </div>
                 </section>
@@ -810,16 +810,71 @@ networks:
             </section>
             <section>
                 <h2>結論</h2>
-                <div style="text-align: left;">投影片
-                    <ul class="fa fa-ul">
-                        <li class="fa"><i class="fa fa-li fa-cloud" aria-hidden="true"></i>網址：</li>
-                        <li class="fa"><i class="fa fa-li fa-github" aria-hidden="true"></i>原始碼(MIT授權)：<br/>
-                        <a href="http://github.com/windperson/ithome-container-summit-2016-slide" target="_blank">
-                        http://github.com/windperson/ithome-container-summit-2016-slide</a></li>
-                    </ul>
+                <section>
+                    <div style="display position: absolute; top: 0px; text-align:center;" class="fragment fade-up" data-fragment-index="0">
+                        <div style="height: auto;vertical-align: middle;" class="fragment fade-out" data-fragment-index="2">
+                            <h4><br/>很想說的是：</h4>
+                            <div class="fragment fade-up" data-fragment-index="1">
+                                <img style="border: 0px; width:100%;" class="stretch" data-src="./pic/cowbae.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: block; position: absolute; top: 30px; text-align: center;" class="fragment fade-up" data-fragment-index="3">
+                        <div class="fragment fade-out" data-fragment-index="7">
+                            <h4><br/>但要說的是：
+                                <span style="text-size:87%;white-space:nowrap; text-transform: capitalize;">
+                                    <span class="fragment fade-up" data-fragment-index="4">Concept</span>
+                                <span class="fragment fade-up" data-fragment-index="5">&nbsp;<i class="fa fa-long-arrow-right" aria-hidden="true"></i>&nbsp;&nbsp;Idea&nbsp;</span>
+                                <span class="fragment fade-up" data-fragment-index="6">&nbsp;<i class="fa fa-long-arrow-right" aria-hidden="true"></i>&nbsp;&nbsp;Technique</span>
+                                </span>
+                            </h4>
+                            <div style="display: table; table-layout: fixed; width:100%; overflow:auto; height: auto;vertical-align: middle;">
+                                <img style="border: 0px;" class="stretch" data-src="./pic/kamen_rider_FOURZE_03.png" /><br/>
+                                <small>來源：<a href="https://ja.wikipedia.org/wiki/仮面ライダーフォーゼ#.E6.94.BE.E9.80.81.E6.97.A5.E7.A8.8B" target="_blank">仮面ライダーフォーゼ</a>&nbsp;episode&nbsp;3</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: block; position: absolute; top: 30px; text-align: center;" class="fragment fade-up" data-fragment-index="8">
+                        <div style="text-align: left;">
+                            <br/>
+                            <h4><span>&nbsp;&nbsp;&nbsp;</span>只是別這樣：</h4>
+                        </div>
+                        <div style="display: table; table-layout: fixed; width:100%; overflow:auto;">
+                            <div style="display: table-cell; width: 60%; height: auto;vertical-align: middle;">
+                                <img style="border: 0px; width: auto;  height: 100%; " data-src="./pic/1520.gif" /><br/>
+                                <small>來源：<a href="http://eznewlife.com/animation_photos/1520.gif" target="_blank">http://eznewlife.com/animation_photos/1520.gif</a></small>
+                            </div>
+                            <div style="display: table-cell; vertical-align: middle;" class="fragment fade-up" data-fragment-index="9">
+                                <h4 style="font-family: Sans-serif;font-size: 120%;white-space: nowrap;text-transform: uppercase;">Do it Right!<br/>Thank you~</h4>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                    <h3>
+                        投影片
+                        <br/>
+                        <div style="text-align:left;">
+                            <ul class="fa fa-ul">
+                                <li class="fa"><i class="fa fa-li fa-cloud" aria-hidden="true"></i>線上看：<a href="http://bit.ly/2cl5cgT" target="_blank">http://bit.ly/2cl5cgT</a></li>
+                                <br/>
+                                <li class="fa"><i class="fa fa-li fa-github" aria-hidden="true"></i>原始碼：<a href="http://bit.ly/2cXZHTs"
+                                        target="_blank">http://bit.ly/2cXZHTs</a></li>
+                            </ul><br/>
+                        </div>
+                        <div style="text-size: 60%;">&nbsp;</div>
+                        範例程式
+                        <br/>
+                        <div style="text-align:left;">
+                            <ul class="fa fa-ul">
+                                <li class="fa"><i class="fa fa-li fa-github" aria-hidden="true"></i>原始碼：<a href="http://bit.ly/2cUSIfi"
+                                        target="_blank">http://bit.ly/2cUSIfi</a></li>
+                            </ul>
+                        </div>
 
-                </div>
+                    </h3>
+                </section>
             </section>
+
             <section>
                 <section>
                     <h2>參考資料</h2>
@@ -881,15 +936,15 @@ docker rmi $(docker images -q -f=dangling=true)
                 <section>
                     <h3>redis容器設定的demo</h3>
                     <iframe class="stretch" data-src="./redis_config.html"></iframe>
-                    <small>會發現居然kernel設定是要設在跑docker-engine的Host上，redis有個啟動紀錄的warning才會消失<br/>&#x1f631;</small>
+                    <small>會發現居然kernel設定是要設在跑docker-engine的Host上，redis有個啟動warning紀錄才會消失<br/>&#x1f631;</small>
                 </section>
             </section>
             </div>
-        </div>
-        <script src="lib/js/head.min.js "></script>
-        <script src="js/reveal.js "></script>
+            </div>
+            <script src="lib/js/head.min.js "></script>
+            <script src="js/reveal.js "></script>
 
-        <script>
+            <script>
 		// Required, even if empty.
 		Reveal.initialize({
             // Enable slide navigation via mouse wheel
