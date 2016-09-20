@@ -50,11 +50,11 @@
                 <section>
                     <h1>不會講到</h1>
                     <h3>
-                        <ul style="text-align: center">
+                        <ul style="text-align: center;">
                             <li style="text-align: left">Kubernates<br/><span>
-                            <a href="http://kubernetes.io" target="_blank">http://kubernetes.io</a></span></li>
+                            <a style="text-transform: lowercase;" href="http://kubernetes.io" target="_blank">http://kubernetes.io</a></span></li>
                             <li style="text-align: left">Mesos<br/><span>
-                                <a href="http://mesos.apache.org" target="_blank">http://mesos.apache.org</a></span></li>
+                                <a style="text-transform: lowercase;" href="http://mesos.apache.org" target="_blank">http://mesos.apache.org</a></span></li>
                         </ul>
                     </h3>
                     <p>以及其他很複雜但除範例之外<br/>不知道怎麼跑起來的方案&#x1f60f;</p>
@@ -199,7 +199,7 @@
                     <h3 class="fragment fade-up" data-fragment-index="1">不管它是什麼，要做的就是：</h3>
                     <ol>
                         <li class="fragment fade-up" data-fragment-index="2">
-                            <div style="white-space: nowrap;">將應用程式執行環境進行<b>包裝</b>產生可佈署的『image』</div>
+                            <div style="white-space: nowrap;">將應用程式&執行環境進行<b>包裝</b>產生可佈署的『image』</div>
                         </li>
                         <li class="fragment fade-up" data-fragment-index="3">
                             <div style="white-space: nowrap;">『image』藉由一些步驟導入到目標端機器的docker上</div>
@@ -436,7 +436,7 @@ networks:
                                 <ul class="fa fa-ul">
                                     <li class="fa fragment fade-up" data-fragment-index="6"><i class="fa fa-li fa-check-square"></i>
                                         <span>
-                                        撰寫新dockerfile繼承自原本開發時期使用的docker image，新增的<a href="https://docs.docker.com/engine/reference/builder/#add" target="_blank">ADD</a>/<a href="https://docs.docker.com/engine/reference/builder/#copy" target="_blank">COPY</a>指令動作將建置成果執行檔加入image。
+                                        撰寫新Dockerfile繼承自原本開發時期使用的docker image，新增的<a href="https://docs.docker.com/engine/reference/builder/#add" target="_blank">ADD</a>/<a href="https://docs.docker.com/engine/reference/builder/#copy" target="_blank">COPY</a>指令動作將建置成果執行檔加入image。
                                         </span>
                                     </li>
                                     <li class="fa fragment fade-up" data-fragment-index="7"><i class="fa fa-li fa-check-square"></i>
