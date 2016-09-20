@@ -951,16 +951,16 @@ docker rmi $(docker images -q -f=dangling=true)
                     <small>會發現居然kernel設定是要設在跑docker-engine的Host上，redis有個啟動warning才會消失<br/>&#x1f631;</small>
                 </section>
                 <section>
-                    <h3>使用Process Manager + tail指令</h3>
+                    <h3>使用<a href="http://docs.docker.com/engine/admin/using_supervisord/" target="_blank">Process Manager</a>&nbsp;+&nbsp;tail指令</h3>
                     <ul class="fa fa-ul" style="font-size: 80%">
                         <li class="fa">
                             <i class="fa fa-li fa-wrench" aria-hidden="true"></i>用來把原本程式行為是<code style="font-style: italic;">Hard&nbsp;Code</code>寫入到固定位置檔案的log，導入到docker-engine的預設log機制裡。</li>
                         <div style="font-size: 20%">&nbsp;</div>
                         <li class="fa"><i class="fa fa-li fa-exclamation" aria-hidden="true"></i> 設定時要注意
-                            <a href="https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/" target="_blank">Pid&nbsp;1問題</a>，以免docker容器會停下來要非常久。
+                            <a href="https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/" target="_blank">Pid&nbsp;1問題</a>，以免docker容器有停下來要非常久的問題。
                         </li>
                         <div style="font-size: 20%">&nbsp;</div>
-                        <li class="fa"><i class="fa fa-li fa-file-code-o" aria-hidden="true"></i> 以下用Python的process&nbsp;manager:&nbsp;
+                        <li class="fa"><i class="fa fa-li fa-file-code-o" aria-hidden="true"></i> 以下用另一個Python的Process&nbsp;manager:&nbsp;
                             <a href="https://pypi.python.org/pypi/circus" target="_blank">circus</a>&nbsp;的設定範例：
                         </li>
                     </ul>
