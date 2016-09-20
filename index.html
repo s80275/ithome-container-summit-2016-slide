@@ -851,29 +851,29 @@ networks:
                 </section>
                 <section>
                     <div style="position: relative; text-align: left;">
-                    <h3>
-                        <div>投影片</div>
-                        <div style="padding: 22px;">
-                            <ul class="fa fa-ul">
-                                <li class="fa"><i class="fa fa-li fa-cloud" aria-hidden="true"></i><span style="font-family: serif;text-transform: lowercase;">線上看：<a href="http://bit.ly/2cl5cgT" target="_blank">http://bit.ly/2cl5cgT</a></span></li>
-                                <br/>
-                                <li class="fa"><i class="fa fa-li fa-github" aria-hidden="true"></i><span style="font-family: serif;text-transform: lowercase;">原始碼：<a href="http://bit.ly/2cXZHTs"
+                        <h3>
+                            <div>投影片</div>
+                            <div style="padding: 22px;">
+                                <ul class="fa fa-ul">
+                                    <li class="fa"><i class="fa fa-li fa-cloud" aria-hidden="true"></i><span style="font-family: serif;text-transform: lowercase;">線上看：<a href="http://bit.ly/2cl5cgT" target="_blank">http://bit.ly/2cl5cgT</a></span></li>
+                                    <br/>
+                                    <li class="fa"><i class="fa fa-li fa-github" aria-hidden="true"></i><span style="font-family: serif;text-transform: lowercase;">原始碼：<a href="http://bit.ly/2cXZHTs"
                                         target="_blank">http://bit.ly/2cXZHTs</a></span></li>
-                            </ul><br/>
-                        </div>
-                    </h3>
-                    <h3>
-                        <div>範例程式</div>
-                        <div style="padding: 22px;">
-                            <ul class="fa fa-ul">
-                                <li class="fa"><i class="fa fa-li fa-github" aria-hidden="true"></i><span style="font-family: serif;text-transform: lowercase;">原始碼：<a href="http://bit.ly/2cUSIfi"
+                                </ul><br/>
+                            </div>
+                        </h3>
+                        <h3>
+                            <div>範例程式</div>
+                            <div style="padding: 22px;">
+                                <ul class="fa fa-ul">
+                                    <li class="fa"><i class="fa fa-li fa-github" aria-hidden="true"></i><span style="font-family: serif;text-transform: lowercase;">原始碼：<a href="http://bit.ly/2cUSIfi"
                                         target="_blank">http://bit.ly/2cUSIfi</a></span></li>
-                            </ul>
-                        </div>
-                    </h3>
-                    <hr class="fragment fade-up" data-fragment-index="1"/>
-                    <div class="fragment fade-up" data-fragment-index="2" style="z-index: 1;position: absolute; float: right; right:33px; font-size: 87%;text-align: left;">
-                        關於我<span style="padding-left: 22px;">
+                                </ul>
+                            </div>
+                        </h3>
+                        <hr class="fragment fade-up" data-fragment-index="1" />
+                        <div class="fragment fade-up" data-fragment-index="2" style="z-index: 1;position: absolute; float: right; right:33px; font-size: 87%;text-align: left;">
+                            關於我<span style="padding-left: 22px;">
                         <ul class="fa fa-ul">
                             <li class="fa"><i class="fa fa-li fa-facebook-square" aria-hidden="true"></i><a style="font-family: Sans-serif;" href="https://www.facebook.com/windperson" target="_blank">Facebook</a></li>
                             <br/>
@@ -882,8 +882,8 @@ networks:
                             <li class="fa"><i class="fa fa-li fa-linkedin-square" aria-hidden="true"></i><a style="font-family: Sans-serif;"  href="http://www.linkedin.com/in/isakpao" target="_blank">Linkedin</a></li>                           
                         </ul>
                         </span>
+                        </div>
                     </div>
-                </div>
                 </section>
             </section>
             <section>
@@ -946,8 +946,43 @@ docker rmi $(docker images -q -f=dangling=true)
                 </section>
                 <section>
                     <h3>redis容器設定的demo</h3>
+                    <small><a href="./redis_config.html" target="_blank">另開新頁</a></small>
                     <iframe class="stretch" data-src="./redis_config.html"></iframe>
-                    <small>會發現居然kernel設定是要設在跑docker-engine的Host上，redis有個啟動warning紀錄才會消失<br/>&#x1f631;</small>
+                    <small>會發現居然kernel設定是要設在跑docker-engine的Host上，redis有個啟動warning才會消失<br/>&#x1f631;</small>
+                </section>
+                <section>
+                    <h3>使用Process Manager + tail指令</h3>
+                    <ul class="fa fa-ul" style="font-size: 80%">
+                        <li class="fa">
+                            <i class="fa fa-li fa-wrench" aria-hidden="true"></i>用來把原本程式行為是<code style="font-style: italic;">Hard&nbsp;Code</code>寫入到固定位置檔案的log，導入到docker-engine的預設log機制裡。</li>
+                        <div style="font-size: 20%">&nbsp;</div>
+                        <li class="fa"><i class="fa fa-li fa-exclamation" aria-hidden="true"></i> 設定時要注意
+                            <a href="https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/" target="_blank">Pid&nbsp;1問題</a>，以免docker容器會停下來要非常久。
+                        </li>
+                        <div style="font-size: 20%">&nbsp;</div>
+                        <li class="fa"><i class="fa fa-li fa-file-code-o" aria-hidden="true"></i> 以下用Python的process&nbsp;manager:&nbsp;
+                            <a href="https://pypi.python.org/pypi/circus" target="_blank">circus</a>&nbsp;的設定範例：
+                        </li>
+                    </ul>
+                    <pre style="padding: 0; margin-top: 0;">
+                        <code data-trim data-noescape class="hljs ini">
+[watcher:show_log_worker]
+cmd = <mark>/usr/bin/tail --retry -f /php_log/access.log --retry -f /php_log/exception.log --retry -f /php_log/error.log --retry -f /php_log/slow.log</mark>
+copy_env = True
+stdout_stream.class = StdoutStream
+stderr_stream.class = StdoutStream
+
+[watcher:phpfpm_worker]
+cmd = /usr/local/sbin/php-fpm
+working_dir=/var/www/html
+numprocesses = 1
+warmup_delay = 3
+graceful_timeout = 10
+copy_env = True
+stdout_stream.class = StdoutStream
+stderr_stream.class = StdoutStream
+                        </code>
+                    </pre>
                 </section>
             </section>
             </div>
